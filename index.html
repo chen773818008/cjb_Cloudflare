@@ -8,102 +8,139 @@
 <style>
 :root{
   color-scheme:light dark;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","Iowan Old Style",Palatino,Georgia,serif;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-  --bg:#f6f2e9;--paper:#fffdf7;--paper2:#f1ece0;--ink:#2b2721;--ink2:#6c6457;--ink3:#9a9182;
-  --line:#e0d7c5;--accent:#bd5a3c;--shadow:0 1px 2px rgba(80,66,40,.05),0 10px 26px rgba(80,66,40,.07);
-  --d1:#d4754a;--d2:#c1902c;--d3:#6b9668;--d4:#4488b8;--d5:#8464b0;
-  --d6:#bd6355;--d7:#3a9986;--d8:#2a7472;--d9:#b0733c;--d10:#8a8a86;
+  --bg:#F4F0E8;--paper:#FFFFFF;--paper2:#FBF7F0;--ink:#241F1A;--ink2:#6B6257;--ink3:#A2988A;
+  --line:#E7E0D2;--accent:#E4573F;--accent-soft:#FBE9E4;--teal:#12897F;--teal-soft:#E4F1EF;
+  --shadow:0 1px 2px rgba(36,31,26,.05),0 4px 16px -6px rgba(140,120,90,.18);
+  --shadow-lg:0 2px 4px rgba(36,31,26,.05),0 12px 32px -10px rgba(140,120,90,.26);
+  --d1:#D2703F;--d2:#C0912E;--d3:#6E9463;--d4:#3F7FA8;--d5:#7E62A8;
+  --d6:#B95C50;--d7:#2F9384;--d8:#2A6E6B;--d9:#A8703A;--d10:#8A857C;
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#131518;--paper:#1b1e22;--paper2:#22262b;--ink:#eceae4;--ink2:#a7a29a;--ink3:#7a756c;
-  --line:#31363c;--accent:#e08a5f;--shadow:0 1px 2px rgba(0,0,0,.35),0 12px 30px rgba(0,0,0,.3);
-  --d1:#e08a5f;--d2:#d6b45c;--d3:#8cb389;--d4:#6aa6ce;--d5:#a78bd0;
-  --d6:#d88274;--d7:#5cbda6;--d8:#4b9b99;--d9:#cd9159;--d10:#9b9b97;
+  --bg:#17140F;--paper:#211D18;--paper2:#2B251E;--ink:#EDE7DD;--ink2:#B0A695;--ink3:#7C7365;
+  --line:#3A342B;--accent:#F0805F;--accent-soft:#3D2620;--teal:#5BC0B4;--teal-soft:#1E332F;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px -6px rgba(0,0,0,.5);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.4),0 14px 34px -10px rgba(0,0,0,.6);
+  --d1:#E88B5C;--d2:#D9AE4E;--d3:#90B384;--d4:#6BA6CE;--d5:#A98DD4;
+  --d6:#D47A6C;--d7:#57BCA9;--d8:#54A29D;--d9:#C99159;--d10:#A39E93;
 }}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;
-  background-image:radial-gradient(rgba(120,100,60,.07) 1px,transparent 1px);background-size:18px 18px}
-@media (prefers-color-scheme:dark){body{background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px)}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14.5px;line-height:1.65}
 .wrap{max-width:820px;margin:0 auto;padding:0 16px 76px}
 h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em}
-.hero{padding:30px 0 14px;text-align:center}
-.hero .kicker{font-size:12.5px;letter-spacing:.28em;color:var(--ink3);text-transform:uppercase;margin:0 0 8px}
-.hero h1{margin:0 0 8px;font-size:clamp(23px,6.4vw,33px);line-height:1.25}
-.hero p{margin:0;color:var(--ink2);font-size:13.5px}
-.hero .rule{width:78px;height:6px;margin:16px auto 0;border-top:1.6px dashed var(--line)}
-section{margin-top:30px;scroll-margin-top:14px}
-.sec-title{display:flex;align-items:baseline;gap:9px;margin:0 0 13px}
-.sec-title .num{font-family:var(--serif);font-size:13px;color:var(--accent);border:1.4px dashed var(--accent);
-  border-radius:50%;width:23px;height:23px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
-.sec-title h2{margin:0;font-size:18.5px}
-.sec-title .hint{margin-left:auto;font-size:12px;color:var(--ink3)}
-.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);
-  border-radius:15px 18px 14px 17px/17px 14px 18px 15px;padding:18px}
-.now{border-left:5px solid var(--accent)}
-.now .label{font-size:12px;letter-spacing:.2em;color:var(--ink3);margin:0 0 6px}
+.hero{padding:34px 0 14px;text-align:center}
+.hero .kicker{font-size:11.5px;letter-spacing:.3em;color:var(--ink3);text-transform:uppercase;margin:0 0 9px}
+.hero h1{margin:0 0 9px;font-size:clamp(23px,6.4vw,33px);line-height:1.25}
+.hero p{margin:0;color:var(--ink2);font-size:13px}
+.hero .rule{width:34px;height:3px;margin:17px auto 0;background:var(--accent);border-radius:2px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;max-width:340px;margin:18px auto 0}
+.stats .st{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 6px 9px;text-align:center;box-shadow:var(--shadow)}
+.stats .st b{display:block;font-family:var(--serif);font-size:21px;line-height:1.15;font-weight:600}
+.stats .st span{font-size:10.5px;color:var(--ink3);letter-spacing:.1em}
+section{margin-top:30px;scroll-margin-top:108px}
+
+/* ===== 顶部菜单栏 ===== */
+.navbar{position:sticky;top:0;z-index:40;margin:0 -16px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.nb-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 16px 3px}
+.nb-brand{font-family:var(--serif);font-size:13.5px;font-weight:600}
+.nb-edit{font-family:var(--sans);font-size:11.5px;font-weight:600;color:#fff;background:var(--accent);border:0;
+  border-radius:999px;padding:6px 14px;cursor:pointer}
+.nb-edit.on{background:var(--teal)}
+.nb-nav{display:flex;gap:6px;padding:5px 16px 10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nb-nav::-webkit-scrollbar{display:none}
+.nb-chip{flex:0 0 auto;font-family:var(--sans);font-size:11.5px;font-weight:500;color:var(--ink2);background:var(--paper2);
+  border:1px solid transparent;border-radius:999px;padding:6px 12px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.nb-chip:hover{color:var(--ink)}
+.nb-chip.on{background:var(--accent);color:#fff}
+.ebanner{display:none;font-size:10.5px;color:var(--accent);background:var(--accent-soft);padding:7px 16px}
+body.editing .ebanner{display:block}
+
+/* ===== 按天分页 ===== */
+.daystrip{display:flex;gap:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 0 4px;margin-bottom:12px}
+.daystrip::-webkit-scrollbar{display:none}
+.dchip{flex:0 0 auto;width:30px;height:30px;border-radius:999px;background:var(--paper);border:1px solid var(--line);
+  font-family:var(--serif);font-size:11.5px;font-weight:600;color:var(--dc);cursor:pointer;padding:0;line-height:1}
+.dchip:hover{border-color:var(--dc)}
+.dchip.on{background:var(--dc);border-color:var(--dc);color:#fff}
+.pager{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:14px}
+.pbtn{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink2);background:var(--paper);
+  border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer}
+.pbtn.primary{background:var(--c);border-color:var(--c);color:#fff}
+.pbtn:disabled{opacity:.35;cursor:not-allowed}
+.pnum{font-family:var(--serif);font-size:12.5px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.sec-title{display:flex;align-items:center;gap:10px;margin:0 0 13px}
+.sec-title .num{font-family:var(--serif);font-size:11.5px;font-weight:600;color:#fff;background:var(--accent);
+  border-radius:50%;width:21px;height:21px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.sec-title h2{margin:0;font-size:17.5px}
+.sec-title .hint{margin-left:auto;font-size:10.5px;color:var(--ink3);letter-spacing:.02em}
+.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:18px}
+.now{box-shadow:var(--shadow-lg)}
+.now .label{font-size:11px;letter-spacing:.22em;color:var(--ink3);margin:0 0 7px}
 .now .ev{font-family:var(--serif);font-size:clamp(18px,5.2vw,23px);line-height:1.3;margin:0 0 5px}
 .now .when{font-size:13.5px;color:var(--ink2);margin:0}
 .now .when b{color:var(--ink);font-weight:600}
 .cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 0}
-.cd .unit{background:var(--paper2);border:1px dashed var(--line);border-radius:12px 14px 11px 13px;padding:9px 4px;text-align:center}
-.cd .n{font-family:var(--serif);font-size:clamp(21px,6.6vw,28px);line-height:1.05;font-variant-numeric:tabular-nums}
-.cd .u{font-size:11px;color:var(--ink3);letter-spacing:.12em;margin-top:2px}
-.clocks{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;padding-top:13px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink2)}
+.cd .unit{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:10px 4px;text-align:center}
+.cd .n{font-family:var(--serif);font-size:clamp(21px,6.6vw,27px);line-height:1.05;font-variant-numeric:tabular-nums;font-weight:600}
+.cd .u{font-size:10.5px;color:var(--ink3);letter-spacing:.14em;margin-top:3px}
+.clocks{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;padding-top:13px;border-top:1px solid var(--line);font-size:12px;color:var(--ink2)}
 .clocks span{font-variant-numeric:tabular-nums;background:var(--paper2);border-radius:999px;padding:4px 12px}
 .clocks b{color:var(--ink);font-weight:600}
 .mapbox{overflow-x:auto}
 .mapbox svg{display:block;width:100%;min-width:660px;height:auto}
 .mapbox svg text.lbl{paint-order:stroke;stroke:var(--paper2);stroke-width:3.6px;stroke-linejoin:round}
 .legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);border:1px solid var(--line);
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:11.5px;color:var(--ink2);border:1px solid var(--line);
   border-radius:999px;padding:4px 11px;background:var(--paper);cursor:pointer;text-decoration:none;white-space:nowrap}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);display:inline-block}
 .chip:hover{border-color:var(--ink3)}
 .ogroup{margin-top:20px}.ogroup:first-of-type{margin-top:0}
-.ogroup>h3{margin:0 0 10px;font-size:14.5px;color:var(--ink2);letter-spacing:.04em}
-.oitem{border:1px solid var(--line);border-radius:13px 15px 12px 14px;padding:13px 14px;background:var(--paper);margin-bottom:10px}
-.oitem .t{font-weight:600;font-size:14.5px;margin:0 0 3px}
-.oitem .tm{font-size:13px;color:var(--accent);font-variant-numeric:tabular-nums;margin:0 0 2px}
-.oitem .tz{font-size:11.5px;color:var(--ink3);margin:0 0 5px}
-.oitem .sub{font-size:12.5px;color:var(--ink2);margin:0 0 6px}
-.oitem .addr{font-size:13px;margin:0;color:var(--ink2)}
-.oitem .addr a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink3)}
-.oitem .addr a:hover{color:var(--accent)}
-.pill{display:inline-block;font-size:11px;padding:1.5px 8px;border-radius:999px;border:1px dashed var(--line);color:var(--ink3);margin-right:6px}
-.pill.ok{border-color:#4f9a6a;color:#4f9a6a}
-.pill.warn{border-color:var(--accent);color:var(--accent)}
+.ogroup>h3{margin:0 0 10px;font-size:13px;color:var(--ink2);letter-spacing:.06em}
+.oitem{border-radius:12px;padding:13px 14px;background:var(--paper2);margin-bottom:10px}
+.oitem:last-child{margin-bottom:0}
+.oitem .t{font-family:var(--serif);font-weight:600;font-size:14px;margin:0 0 4px}
+.oitem .tm{font-size:13.5px;color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;margin:0 0 2px}
+.oitem .tz{font-size:10.5px;color:var(--ink3);margin:0 0 5px}
+.oitem .sub{font-size:11.5px;color:var(--ink2);margin:0 0 6px}
+.oitem .addr{font-size:10.5px;margin:0;color:var(--ink2)}
+.oitem .addr a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
+.oitem .addr a:hover{filter:brightness(1.1)}
+.pill{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 9px;border-radius:999px;
+  background:var(--paper);border:1px solid var(--line);color:var(--ink3);margin-right:7px;vertical-align:1px}
+.pill.ok{border:none;background:var(--teal-soft);color:var(--teal)}
+.pill.warn{border:none;background:var(--accent-soft);color:var(--accent)}
 .d1{--c:var(--d1)}.d2{--c:var(--d2)}.d3{--c:var(--d3)}.d4{--c:var(--d4)}.d5{--c:var(--d5)}
 .d6{--c:var(--d6)}.d7{--c:var(--d7)}.d8{--c:var(--d8)}.d9{--c:var(--d9)}.d10{--c:var(--d10)}
 .day{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);
-  border-radius:15px 18px 14px 17px/17px 14px 18px 15px;margin-bottom:14px;overflow:hidden;scroll-margin-top:12px}
-.day-head{display:flex;align-items:flex-start;gap:11px;padding:14px 16px;border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,color-mix(in srgb,var(--c) 10%,transparent),transparent)}
-.dot{width:11px;height:11px;border-radius:50%;background:var(--c);flex:0 0 auto;margin-top:7px;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent)}
+  border-radius:18px;margin-bottom:14px;overflow:hidden;scroll-margin-top:12px}
+.day-head{display:flex;align-items:flex-start;gap:11px;padding:13px 16px;border-bottom:1px solid var(--line);
+  background:var(--paper2)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 auto;margin-top:7px;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 20%,transparent)}
 .day-head .h{flex:1;min-width:0}
-.day-head .d{font-size:12px;color:var(--ink3);letter-spacing:.06em;margin:0 0 2px;font-variant-numeric:tabular-nums}
-.day-head .t{font-family:var(--serif);font-size:16.5px;margin:0;line-height:1.35}
-.day-head .m{font-size:12px;color:var(--ink2);margin:3px 0 0}
-.rt{flex:0 0 auto;font-size:12px;color:var(--ink2);border:1px solid var(--line);background:var(--paper);
+.day-head .d{font-size:11px;color:var(--ink3);letter-spacing:.06em;margin:0 0 2px;font-variant-numeric:tabular-nums}
+.day-head .t{font-family:var(--serif);font-size:16px;margin:0;line-height:1.35}
+.day-head .m{font-size:11.5px;color:var(--ink2);margin:3px 0 0}
+.rt{flex:0 0 auto;font-size:11.5px;color:var(--ink2);border:1px solid var(--line);background:var(--paper);
   border-radius:999px;padding:4px 11px;cursor:pointer;font-family:var(--sans)}
-.rt:hover{border-color:var(--ink3);color:var(--ink)}
+.rt:hover{border-color:var(--c);color:var(--ink)}
 .day-body{padding:6px 16px 14px}
-.it{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.it{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
 .it:last-child{border-bottom:0}
-.it .tt{flex:0 0 60px;font-variant-numeric:tabular-nums;font-size:13px;color:var(--ink3);padding-top:1px;font-family:var(--serif)}
+.it .tt{flex:0 0 42px;text-align:right;font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--ink3);padding-top:2px;font-family:var(--serif)}
 .it .tt.has{color:var(--c);font-weight:600}
 .it .mn{flex:1;min-width:0}
-.it .nm{font-size:14.5px;font-weight:600;margin:0 0 2px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px}
+.it .nm{font-size:13.5px;font-weight:600;margin:0 0 2px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px}
 .it .nm a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ink3)}
 .it .nm a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.it .nt{font-size:12.5px;color:var(--ink2);margin:0}
-.it .bk{font-size:10.5px;color:var(--accent);border:1px dashed var(--accent);border-radius:999px;padding:0 7px;white-space:nowrap;font-weight:400}
-.it.fly{background:linear-gradient(90deg,color-mix(in srgb,var(--c) 8%,transparent),transparent)}
+.it .nt{font-size:11.5px;color:var(--ink2);margin:0}
+.it .bk{font-size:10px;color:var(--accent);background:var(--accent-soft);border:none;border-radius:999px;padding:1px 8px;white-space:nowrap;font-weight:500}
+.it.fly{background:linear-gradient(90deg,color-mix(in srgb,var(--c) 7%,transparent),transparent)}
 .it.fly .nm::before{content:"✈";margin-right:3px;color:var(--c)}
 .it-ops{display:none;gap:6px;margin-top:7px;flex-wrap:wrap}
 body.editing .it-ops{display:flex}
-.day-stay{margin:12px 0 0;padding:10px 12px;border-radius:11px;background:var(--paper2);font-size:12.5px;color:var(--ink2)}
+.day-stay{margin:12px 0 0;padding:10px 12px;border-radius:12px;background:var(--paper2);font-size:12px;color:var(--ink2)}
 .day-stay b{color:var(--ink)}
 .day-stay a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink3)}
 .route-panel{display:none;padding:0 16px 16px}
@@ -111,7 +148,7 @@ body.editing .it-ops{display:flex}
 .rmap{border:1px solid var(--line);border-radius:12px;background:var(--paper2);padding:6px;margin:0 0 12px}
 .rmap svg{display:block;width:100%;height:auto}
 .stops{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}
-.stop{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);text-decoration:none;
+.stop{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink2);text-decoration:none;
   border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--paper)}
 .stop b{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;
   background:var(--c);color:#fff;font-size:10px;font-weight:600}
@@ -124,27 +161,28 @@ body.editing .day-edit{display:flex}
 .btn-s{font-size:12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:4px 11px;cursor:pointer;color:var(--ink2);font-family:var(--sans)}
 .btn-s:hover{border-color:var(--ink3);color:var(--ink)}
 .btn-s.danger:hover{border-color:var(--accent);color:var(--accent)}
+.it-ops .btn-s,.i-ops .btn-s{font-size:10.5px;padding:3px 10px;border-radius:999px;background:var(--paper2);border-color:transparent}
+.it-ops .btn-s.danger,.i-ops .btn-s.danger{background:var(--accent-soft);color:var(--accent)}
+.day-edit [data-addi]{flex:1 1 100%;background:var(--paper2);border-color:transparent;color:var(--accent);font-weight:600;padding:9px 12px}
 .todo{list-style:none;margin:0;padding:0;counter-reset:td}
-.todo li{position:relative;padding:11px 0 11px 34px;border-bottom:1px dashed var(--line);font-size:13.5px}
+.todo li{position:relative;padding:11px 0 11px 34px;border-bottom:1px solid var(--line);font-size:12.5px}
 .todo li:last-child{border-bottom:0}
 .todo li::before{counter-increment:td;content:counter(td,decimal-leading-zero);position:absolute;left:0;top:12px;
-  font-family:var(--serif);font-size:11.5px;color:var(--accent);width:24px;text-align:right}
+  font-family:var(--serif);font-size:12px;font-weight:700;color:var(--accent);width:24px;text-align:right}
 .i-ops{display:none;gap:6px;margin-top:6px;flex-wrap:wrap}
 body.editing .i-ops{display:flex}
-.todo-foot{margin-top:14px;padding-top:13px;border-top:1px dashed var(--line);display:none}
+.todo-foot{margin-top:14px;padding-top:13px;border-top:1px solid var(--line);display:none}
 body.editing .todo-foot{display:block}
 .tips{margin:0;padding:0;list-style:none}
-.tips li{padding:11px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.tips li{padding:11px 0;border-bottom:1px solid var(--line);font-size:12px}
 .tips li:last-child{border-bottom:0}
 .tips b{color:var(--ink)}
-.tips .k{font-family:var(--serif);color:var(--accent);margin-right:4px}
-.edittab{position:fixed;right:14px;bottom:14px;z-index:40;width:42px;height:42px;border-radius:50%;
-  border:1px solid var(--line);background:var(--paper);color:var(--ink2);font-size:17px;cursor:pointer;
-  box-shadow:var(--shadow);opacity:.5;transition:opacity .2s;line-height:1}
-.edittab:hover,.edittab.on{opacity:1;color:var(--accent);border-color:var(--accent)}
-.editbar{position:fixed;left:14px;bottom:14px;z-index:40;display:none;gap:8px;align-items:center}
+.tips .k{display:inline-block;font-family:var(--sans);font-size:10.5px;color:var(--ink2);background:var(--paper2);
+  border-radius:999px;padding:2px 9px;margin-right:6px;vertical-align:1px;white-space:nowrap}
+.editbar{position:fixed;left:14px;bottom:14px;z-index:50;display:none;gap:8px;align-items:center}
 body.editing .editbar{display:flex}
-.editbar .note{font-size:11.5px;color:var(--ink3);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px;box-shadow:var(--shadow);max-width:62vw}
+.editbar .note{font-size:11.5px;color:var(--ink3);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px;box-shadow:var(--shadow);white-space:nowrap}
+.editbar .btn-s{padding:7px 14px;border-radius:999px;box-shadow:var(--shadow);background:var(--paper)}
 .modal{position:fixed;inset:0;z-index:60;background:rgba(28,24,18,.5);display:flex;align-items:center;justify-content:center;padding:16px}
 .modal[hidden]{display:none}
 .modal-box{background:var(--paper);border-radius:14px;padding:18px;width:100%;max-width:420px;max-height:86vh;overflow:auto;box-shadow:0 20px 50px rgba(0,0,0,.3)}
@@ -159,7 +197,7 @@ body.editing .editbar{display:flex}
   border:1px solid var(--line);background:var(--paper);color:var(--ink2)}
 .modal-actions .primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 @media(max-width:520px){
-  .it .tt{flex-basis:52px;font-size:12.5px}
+  .it .tt{flex-basis:38px;font-size:12px}
   .card{padding:15px}
   .day-body{padding:4px 13px 13px}
   .route-panel{padding:0 13px 14px}
@@ -169,10 +207,32 @@ body.editing .editbar{display:flex}
 <body>
 <div class="wrap">
 
+<!-- 菜单栏 -->
+<div class="navbar" id="navbar">
+  <div class="nb-top">
+    <div class="nb-brand">悉尼 · 墨尔本 10 日</div>
+    <button class="nb-edit" id="editBtn">编辑</button>
+  </div>
+  <nav class="nb-nav" id="navChips">
+    <a class="nb-chip" href="#now" data-sec="now">总览</a>
+    <a class="nb-chip" href="#map" data-sec="map">地图</a>
+    <a class="nb-chip" href="#orders" data-sec="orders">订单</a>
+    <a class="nb-chip" href="#days" data-sec="days">行程</a>
+    <a class="nb-chip" href="#todo" data-sec="todo">待办</a>
+    <a class="nb-chip" href="#tips" data-sec="tips">贴士</a>
+  </nav>
+  <div class="ebanner">编辑模式 · 改动仅保存在本机浏览器，不影响公开页面</div>
+</div>
+
 <header class="hero">
   <p class="kicker">Sydney &nbsp;·&nbsp; Melbourne</p>
   <h1>悉尼 · 墨尔本 10 日行程手册</h1>
-  <p>2026 年 9 月 27 日出发 · 5 人 · 全程不租车，城际包车 + 公共交通</p>
+  <p>2026 年 9 月 27 日出发 · 5 人 · 悉尼段自驾，大洋路包车，市区靠公共交通</p>
+  <div class="stats">
+    <div class="st"><b>10</b><span>天行程</span></div>
+    <div class="st"><b>5</b><span>人同行</span></div>
+    <div class="st"><b>9</b><span>晚住宿</span></div>
+  </div>
   <div class="rule"></div>
 </header>
 
@@ -334,8 +394,14 @@ body.editing .editbar{display:flex}
 
 <!-- ④ 逐日行程 -->
 <section id="days">
-  <div class="sec-title"><span class="num">4</span><h2>逐日行程</h2><span class="hint">点标题下「当日路线」展开导航</span></div>
+  <div class="sec-title"><span class="num">4</span><h2>逐日行程</h2><span class="hint" id="dayHint"></span></div>
+  <div class="daystrip" id="dayStrip"></div>
   <div id="daysBox"></div>
+  <div class="pager" id="pager">
+    <button class="pbtn" id="prevDay">‹ 上一日</button>
+    <span class="pnum" id="pNum"></span>
+    <button class="pbtn primary" id="nextDay">下一日 ›</button>
+  </div>
 </section>
 
 <!-- ⑤ 待办清单 -->
@@ -355,6 +421,11 @@ body.editing .editbar{display:flex}
       <li><span class="k">时区</span><b>10 月 4 日凌晨 2:00 起，新州与维州进入夏令时</b>，时钟直接跳到 3:00，两州由 UTC+10 变为 UTC+11。手机会自动切换，但当晚少睡 1 小时，10/4 这天别排太满。所有倒计时按绝对时刻计算，不受切换影响。</li>
       <li><span class="k">交通卡</span>悉尼用 <b>Opal 卡</b>（火车 / 公交 / 渡轮通用，便利店可购），墨尔本用 <b>Myki 卡</b>（电车 / 火车 / 公交）。两城刷卡上下车都要刷，逃票罚款很重。</li>
       <li><span class="k">打车</span>澳洲用 <b>Uber</b> 或 <b>DiDi</b>，进市区也可打 13cabs。墨尔本市区有免费电车区（Free Tram Zone），弗林德斯街、女王市场一带都在圈内。</li>
+      <li><span class="k">自驾·证件</span>中国驾照在澳洲不能单独使用，必须配 <b>NAATI 认证的英文翻译件</b>（或国际驾照 IDP）。取车时带三样：<b>驾照原件 + 翻译件 + 主驾名下的信用卡</b>（用于押金预授权）。澳洲<b>靠左行驶、方向盘在右</b>，转向灯拨杆和雨刷位置与国内相反。</li>
+      <li><span class="k">自驾·交规</span>环岛一律<b>让右</b>；限速市区 50、学校区上下学时段 40、高速 100–110，超速罚得极重；红灯<b>不能左转</b>（有左转箭头才行）；车上所有人必须系安全带；开车碰手机（包括等红灯时）属严重违章，罚款上千澳元。</li>
+      <li><span class="k">自驾·加油</span>无铅汽油认 <b>Unleaded 91 / 95 / 98</b>，柴油是 Diesel，别加错。基本都是自助加油，<b>加完到店里报油枪号付款</b>。悉尼到杰维斯湾沿线镇上加油站不缺，但价差大，凯马一带相对便宜。</li>
+      <li><span class="k">自驾·停车</span>路边标识要看仔细：<b>红底 "No Stopping" 一秒都不能停</b>，"No Parking" 可短暂上下客人不离车。付费车位多用咪表或 App，悉尼市区停车贵，优先停住处或正规停车场。</li>
+      <li><span class="k">自驾·收费路</span>悉尼 M2 / M5 / M7 等为<b>电子收费，没有人工收费亭</b>。租车公司会自动代扣并加收一笔手续费。去杰维斯湾走王子公路<b>不经过收费路段</b>，不用担心。</li>
       <li><span class="k">退税</span>离境退税 TRS：<b>同一商家累计满 A$300</b>、离境前 60 天内购买、随身携带商品与小票。墨尔本机场 T2 出发层有 TRS 柜台，10/7 是早班机，退税排队要留足时间。</li>
       <li><span class="k">大洋路</span>沿线加油站稀少且偏贵，<b>离开墨尔本前加满油</b>；Wongarra 一带手机信号弱，出发前把导航和住宿联系方式离线存好。</li>
       <li><span class="k">看企鹅</span>圣基尔达防波堤的小蓝企鹅是<b>野生保护动物</b>：禁闪光灯、禁大声喧哗、禁投喂、保持两米以上距离，日落后不要用强光手电乱照。</li>
@@ -368,10 +439,9 @@ body.editing .editbar{display:flex}
   </div>
 </section>
 
-<button class="edittab" id="editTab" title="切换编辑模式">✎</button>
 <div class="editbar" id="editBar">
   <button class="btn-s" id="resetTrip">恢复原稿</button>
-  <span class="note">编辑只保存在本机浏览器，不影响他人看到的内容</span>
+  <span class="note" title="编辑只保存在本机浏览器，不影响他人看到的内容">改动仅存本机</span>
 </div>
 
 <div class="modal" id="modal" hidden>
@@ -440,8 +510,8 @@ days:[
   {name:'339 Sussex Street（第 1–3 晚）',addr:'339 Sussex St, Sydney NSW 2000',place:'339 Sussex St, Sydney NSW 2000'},
   [
   I('2026-09-28T06:10:00+10:00','06:10','降落悉尼金斯福德·史密斯机场 T1','国泰 CX111 · 空客 A350-900 · 飞行 9 小时 5 分 · 起降均为当地时间','Sydney Airport Terminal 1 International, Mascot NSW 2020',-33.9344,151.1657,'flight'),
-  I('2026-09-28T06:50:00+10:00','06:50','预约接机车上车','7 座 · 13 公里约 20 分钟 · 含 60 分钟免费等待 · 服务商「远山旅游」','Sydney Airport Terminal 1, Mascot NSW 2020',-33.9344,151.1657,'car'),
-  I('2026-09-28T07:20:00+10:00','07:20','到住处寄存行李','房东 Milan · 15:00 才能正式入住，先寄行李、洗漱、换身衣服','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
+  I('2026-09-28T07:10:00+10:00','07:10','预约接机车上车','7 座 · 13 公里约 20 分钟 · 含 60 分钟免费等待 · 服务商「远山旅游」。06:10 落地，入境 + 取行李要 45–75 分钟，07:10 上车更从容','Sydney Airport Terminal 1, Mascot NSW 2020',-33.9344,151.1657,'car'),
+  I('2026-09-28T07:45:00+10:00','07:45','到住处寄存行李','房东 Milan · 15:00 才能正式入住，先寄行李、洗漱、换身衣服','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
   I('2026-09-28T10:00:00+10:00','10:00','环形码头 Circular Quay 漫步','住处坐轻轨或步行约 15 分钟，先去码头看海港最开阔的一段','Circular Quay, Sydney NSW 2000',-33.8610,151.2105),
   I('2026-09-28T10:40:00+10:00','10:40','悉尼歌剧院外景 + 海港大桥','内部导览排在 9/29，今天先在歌剧院广场和岩石区一侧取景','Sydney Opera House, Bennelong Point, Sydney NSW 2000',-33.8568,151.2153),
   I('2026-09-28T12:30:00+10:00','12:30','岩石区 The Rocks 午餐','步行约 8 分钟，历史街区里的酒馆与咖啡馆密集','The Rocks, Sydney NSW 2000',-33.8599,151.2087),
@@ -471,34 +541,36 @@ days:[
   I('2026-09-30T17:00:00+10:00','17:00','火车返回悉尼','Katoomba → Central 约 2 小时，车上正好休息','Katoomba Station, Katoomba NSW 2780',-33.7120,150.3120),
   I('2026-09-30T19:30:00+10:00','19:30','回住处，晚餐就近解决','明天要带着行李南下，先把要用的东西整理好','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
   ]),
- D('2026-10-01','周四','d4','悉尼 → 杰维斯湾','南下杰维斯湾 · 包车第 1 天','driving',
+ D('2026-10-01','周四','d4','悉尼 → 杰维斯湾','提车南下杰维斯湾 · 自驾第 1 天','driving',
   {name:'40 Tidy Close, Callala Bay（第 4 晚）',addr:'40 Tidy Close, Callala Bay NSW 2540',place:'40 Tidy Close, Callala Bay NSW 2540'},
   [
-  I('2026-10-01T09:00:00+10:00','09:00','退房、行李装车','退房截止 10:00，包车 09:00 到门口，行李全部装车','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
-  I('2026-10-01T09:30:00+10:00','09:30','出发南下（包车）','悉尼 → 卡拉拉海湾约 200 公里、3 小时，走王子公路一路向南','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'car'),
-  I('2026-10-01T11:30:00+10:00','11:30','凯马喷水洞 Kiama Blowhole + 灯塔','途中停留约 1 小时，风大时水柱能喷十几米高，观景步道免费','Kiama Blowhole, Blowhole Point Rd, Kiama NSW 2533',-34.6716,150.8620),
+  I('2026-10-01T08:30:00+10:00','08:30','退房、行李集中到楼下','退房截止 10:00，先把行李搬到门厅，退房手续回来再补','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
+  I('2026-10-01T09:00:00+10:00','09:00','SIXT 取车 + 验车','起亚嘉华 8 座（或同组车型）· 带齐：中国驾照原件 + NAATI 英文翻译件 + 主驾信用卡（押金预授权）· 提车前绕车拍一圈视频，划痕、油量、里程都拍进去','SIXT car rental Sydney',null,null,'car'),
+  I('2026-10-01T09:45:00+10:00','09:45','装行李，出发南下','5 人 + 3 个 24 寸箱，放倒第三排刚好。悉尼 → 卡拉拉海湾约 200 公里 / 3 小时，走王子公路一路向南','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'car'),
+  I('2026-10-01T11:30:00+10:00','11:30','凯马喷水洞 Kiama Blowhole + 灯塔','途中停留约 1 小时，风大时水柱能喷十几米高，观景步道免费；镇上有加油站和洗手间','Kiama Blowhole, Blowhole Point Rd, Kiama NSW 2533',-34.6716,150.8620),
   I('2026-10-01T12:30:00+10:00','12:30','凯马 / 杰林冈 午餐','小镇咖啡馆和炸鱼薯条店为主，建议在凯马解决','Kiama NSW 2533',-34.6716,150.8620),
-  I('2026-10-01T15:00:00+10:00','15:00','抵达卡拉拉海湾，入住 40 Tidy Close','房东 Nicole · 入住时间 15:00','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
+  I('2026-10-01T15:00:00+10:00','15:00','抵达卡拉拉海湾，入住 40 Tidy Close','房东 Nicole · 入住时间 15:00 · 先跟房东确认停车位（院内或路边）','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
   I('2026-10-01T16:30:00+10:00','16:30','卡拉拉海滩 Callala Beach 散步','步行可达，湾内水面平静适合下水，10 月水温仍偏凉','Callala Beach, Callala Bay NSW 2540',-35.0000,150.7200),
   I('2026-10-01T18:30:00+10:00','18:30','小镇晚餐','卡拉拉海湾餐馆不多，最好提前订位；也可在超市买海鲜回住处自己做','Callala Bay NSW 2540',-35.0044,150.6889),
-  I('2026-10-01T20:00:00+10:00','20:00','回住处','明天上午去海姆斯海滩，07:30 起','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay')
+  I('2026-10-01T20:00:00+10:00','20:00','回住处','明天要赶 18:15 的飞机，今晚先把行李收好；出发前顺路在杰维斯湾把油加满','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay')
   ]),
- D('2026-10-02','周五','d5','杰维斯湾 → 墨尔本','白沙滩 · 大太平洋公路 · 飞往墨尔本','driving',
+ D('2026-10-02','周五','d5','杰维斯湾 → 墨尔本','白沙滩 · 大太平洋公路 · 还车飞墨尔本 · 自驾第 2 天','driving',
   {name:'88 Park Street, South Melbourne（第 5–6 晚）',addr:'88 Park St, South Melbourne VIC 3205',place:'88 Park St, South Melbourne VIC 3205'},
   [
   I('2026-10-02T07:30:00+10:00','07:30','早餐、收拾行李','与房东谈好提前退房（截止 10:00），行李全部装车','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
-  I('2026-10-02T08:15:00+10:00','08:15','出发去海姆斯海滩','车程约 20 分钟','Hyams Beach, NSW 2540',-35.1008,150.6890),
+  I('2026-10-02T08:15:00+10:00','08:15','出发去海姆斯海滩','自驾约 20 分钟','Hyams Beach, NSW 2540',-35.1008,150.6890),
   I('2026-10-02T08:45:00+10:00','08:45','海姆斯海滩 Hyams Beach','被公认的白沙之最，沙细水清，浅滩适合玩水','Hyams Beach, NSW 2540',-35.1008,150.6890),
   I('2026-10-02T09:30:00+10:00','09:30','返回住处办退房','退房截止 10:00，务必卡住时间','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
-  I('2026-10-02T10:15:00+10:00','10:15','出发北上，走大太平洋公路','卡拉拉海湾 → 悉尼机场约 190 公里','Callala Bay NSW 2540',-35.0044,150.6889,'car'),
+  I('2026-10-02T10:15:00+10:00','10:15','出发北上，走大太平洋公路','卡拉拉海湾 → 悉尼机场约 190 公里 / 3 小时：先走王子公路，再切到海岸线','Callala Bay NSW 2540',-35.0044,150.6889,'car'),
   I('2026-10-02T12:45:00+10:00','12:45','沿途小镇午餐','凯马或卧龙岗一带解决，之后一路向北沿海岸线走','Wollongong NSW 2500',-34.4248,150.8931),
   I('2026-10-02T14:00:00+10:00','14:00','海崖大桥 Sea Cliff Bridge','大太平洋公路最出片的一段，桥架在悬崖与海面之间，路边有停车带','Sea Cliff Bridge, Coalcliff NSW 2508',-34.2462,150.9738),
-  I('2026-10-02T14:40:00+10:00','14:40','秃山观景台 Bald Hill Lookout','俯瞰整条大太平洋公路与海岸线，拍全景的位置','Bald Hill Lookout, Stanwell Tops NSW 2508',-34.2270,150.9780),
-  I('2026-10-02T16:00:00+10:00','16:00','抵达悉尼机场 T3 办登机','国内航站楼，建议起飞前 90 分钟；澳航 QF479','Sydney Airport Terminal 3, Mascot NSW 2020',-33.9366,151.1740),
+  I('2026-10-02T14:40:00+10:00','14:40','秃山观景台 Bald Hill Lookout','俯瞰整条大太平洋公路与海岸线，拍完全景直接北上机场','Bald Hill Lookout, Stanwell Tops NSW 2508',-34.2270,150.9780),
+  I('2026-10-02T15:30:00+10:00','15:30','机场附近加满油 → SIXT 还车','还车前一定加满，否则按高价代加油扣款；还车预留 30 分钟验车交接，再坐接驳或步行去 T3','Sydney Airport, Mascot NSW 2020',-33.9366,151.1740,'car'),
+  I('2026-10-02T16:15:00+10:00','16:15','抵达悉尼机场 T3 办登机','国内航站楼，建议起飞前 90 分钟；澳航 QF479','Sydney Airport Terminal 3, Mascot NSW 2020',-33.9366,151.1740),
   I('2026-10-02T18:15:00+10:00','18:15','QF479 起飞 → 19:50 抵达墨尔本 T1','飞行 1 小时 35 分，起降均为当地时间','Sydney Airport Terminal 3, Mascot NSW 2020',-33.9366,151.1740,'flight'),
-  I('2026-10-02T20:15:00+10:00','20:15','取行李、叫车去南墨尔本','图拉马莱恩机场 → 南墨尔本约 25 分钟','Melbourne Airport, Tullamarine VIC 3043',-37.6695,144.8415),
-  I('2026-10-02T21:00:00+10:00','21:00','入住 88 Park Street, South Melbourne','21:00 到店，入住方式（钥匙箱 / 自助）需提前与房东确认','88 Park St, South Melbourne VIC 3205',-37.8328,144.9638,'stay'),
-  I('2026-10-02T21:30:00+10:00','21:30','Clarendon St 晚餐','南墨尔本主街，餐馆营业到较晚，落地就能吃上热的','Clarendon St, South Melbourne VIC 3205',-37.8330,144.9600)
+  I('2026-10-02T20:15:00+10:00','20:15','取行李、叫车去南墨尔本','图拉马莱恩机场 → 南墨尔本约 25 分钟','Melbourne Airport, Tullamarine VIC 3043',null,null),
+  I('2026-10-02T21:00:00+10:00','21:00','入住 88 Park Street, South Melbourne','21:00 到店，入住方式（钥匙箱 / 自助）需提前与房东确认','88 Park St, South Melbourne VIC 3205',null,null,'stay'),
+  I('2026-10-02T21:30:00+10:00','21:30','Clarendon St 晚餐','南墨尔本主街，餐馆营业到较晚，落地就能吃上热的','Clarendon St, South Melbourne VIC 3205',null,null)
   ]),
  D('2026-10-03','周六','d6','墨尔本','市区漫步 · 拱廊 · 市场 · 涂鸦街','walking',
   {name:'88 Park Street, South Melbourne（第 5–6 晚）',addr:'88 Park St, South Melbourne VIC 3205',place:'88 Park St, South Melbourne VIC 3205'},
@@ -559,24 +631,24 @@ days:[
   {name:'返程',addr:'Melbourne Airport Terminal 2, Tullamarine VIC 3043',place:'Melbourne Airport Terminal 2, Tullamarine VIC 3043'},
   [
   I('2026-10-07T04:15:00+11:00','04:15','起床、退房','提前一晚确认自助退房方式（钥匙箱 / 前台），别在凌晨卡住','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
-  I('2026-10-07T04:30:00+11:00','04:30','用 Uber / 滴滴 叫车去墨尔本机场 T2','现场叫 7 座 XL，CBD → 机场约 25–30 分钟。凌晨在线车少、等待时间可能偏长，建议 04:20 就打开 App 开始叫，同时留出备用方案','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'car'),
+  I('2026-10-07T04:30:00+11:00','04:30','预约送机专车 04:30 出发去墨尔本机场 T2','7 座专车（提前预约，司机准时到门口）· CBD → 机场约 25–30 分钟 · 国际航班建议 05:00 前到 T2','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'car'),
   I('2026-10-07T05:00:00+11:00','05:00','抵达 T2，办登机 + TRS 退税','国际航班建议起飞前 3 小时到；TRS 柜台在出发层，同一商家满 A$300 可退，需带商品与小票','Melbourne Airport Terminal 2, Tullamarine VIC 3043',-37.6690,144.8450),
   I('2026-10-07T08:25:00+11:00','08:25','国泰 CX134 起飞','空客 A350-900 · 飞行 9 小时 30 分 · 墨尔本时间','Melbourne Airport Terminal 2, Tullamarine VIC 3043',-37.6690,144.8450,'flight'),
   I('2026-10-07T14:55:00+08:00','14:55','抵达香港国际机场 T1','中国香港时间 14:55，行程结束','Hong Kong International Airport Terminal 1',null,null,'flight')
   ])
 ],
 todos:[
- '订 10/1–10/2 悉尼 ↔ 卡拉拉海湾（Callala Bay）往返包车 · 7 座带司机 · 2 天',
- '订 10/4–10/5 大洋路包车 · 7 座带司机 · 2 天（墨尔本出发，Wongarra 住宿已在手）',
  '订 9/29 悉尼歌剧院 1 小时中文导览（场次集中在 09:00–17:00，中文场次少，先订）',
  '订 9/30 蓝山景观世界 Scenic World 门票（Discovery Pass，含缆车 / 索道 / 观光火车）',
+ '订 10/4–10/5 大洋路包车 · 7 座带司机 · 2 天（墨尔本出发，Wongarra 住宿已在手）',
  '订 10/6 普芬比利蒸汽火车票（Belgrave ↔ Lakeside 往返，成人 A$66 / 儿童 A$33，必须提前预订）',
- '把 9/28 接机预约时间从 06:50 调到 07:10–07:15（国际航班入境取行李通常要 45–75 分钟）',
+ '订 10/7 凌晨 04:30 送机专车（38 Rose Lane → MEL T2 · 7 座 · 凌晨车少，务必提前预约）',
+ '准备中国驾照的 NAATI 英文翻译件（或国际驾照 IDP），并确认 SIXT 悉尼取车点、还车时间与押金预授权',
+ '与远山旅游确认 9/28 接机时间已改为 07:10（订单含 60 分钟免费等待，通知司机即可）',
  '与 88 Park Street 房东确认 10/2 晚 21:00 左右到店的入住方式',
  '与卡拉拉海湾房东 Nicole 确认 10/2 能否 08:15 提前退房（或 10:00 前返回办退房）',
  '与 Wongarra 公寓房东确认门禁与钥匙箱信息（位置偏、无前台，当晚才问会麻烦）',
  '与 38 Rose Lane 确认 10/7 凌晨 04:15 的退房方式（自助退房 / 前台下钥匙箱）',
- '10/7 凌晨 04:20 打开 Uber / 滴滴 叫 7 座 XL（凌晨在线车少，预留等待时间）',
  '出发前 72 小时在线值机（国泰 CX111、澳航 QF479、国泰 CX134），给 5 人预选座位'
 ]
 };
@@ -603,16 +675,22 @@ var ORDERS=[ {g:'✈ 已出票 · 航班',items:[
    addr:'墨尔本图拉马莱恩机场 T2 → 香港国际机场 T1',map:'Melbourne Airport Terminal 2, Tullamarine VIC 3043',pill:'已出票',cls:'ok'}
  ]},
  {g:'🚐 已订 · 用车',items:[
-  {t:'悉尼机场接机（9/28）',tm:'9/28 周一 06:50 上车',
+  {t:'悉尼机场接机（9/28）',tm:'9/28 周一 07:10 上车',
    tz:'悉尼时间（UTC+10）',
-   sub:'7 座 · 13 公里 / 约 20 分钟 · 含 60 分钟免费等待 · 服务商「远山旅游」· 费用已付',
-   addr:'悉尼金斯福德·史密斯机场 T1 → 339 Sussex St, Sydney NSW 2000',map:'339 Sussex St, Sydney NSW 2000',pill:'时间偏紧，见待办',cls:'warn'}
+   sub:'7 座 · 13 公里 / 约 20 分钟 · 含 60 分钟免费等待 · 服务商「远山旅游」· 费用已付。06:10 落地，入境取行李 45–75 分钟，07:10 上车更从容',
+   addr:'悉尼金斯福德·史密斯机场 T1 → 339 Sussex St, Sydney NSW 2000',map:'339 Sussex St, Sydney NSW 2000',pill:'已订',cls:'ok'}
+ ]},
+ {g:'🚗 已订 · 租车（悉尼段）',items:[
+  {t:'起亚嘉华（2025 款）8 座 · SIXT',tm:'10/1 周四 取车 → 10/2 周五 还车（2 天）',
+   tz:'悉尼时间（UTC+10）',
+   sub:'自动挡 · 8 座 4 门 · 建议坐 5 人 + 3 个 24 寸行李箱 · 已含特惠超级全险套餐（碰撞盗抢险 0 起赔额、第三者责任险、玻璃 / 轮胎 / 底盘 / 道路救援）',
+   addr:'悉尼取车、悉尼还车（具体门店以确认单为准）',map:'SIXT car rental Sydney',pill:'已订',cls:'ok'}
  ]},
  {g:'🏨 已订 · 住宿（共 9 晚）',items:[
   {t:'悉尼 · 339 Sussex Street',tm:'9/28 15:00 → 10/1 10:00（3 晚）',tz:'悉尼时间（UTC+10）',
    sub:'房东 Milan · 第 1–3 晚',addr:'339 Sussex St, Sydney NSW 2000',map:'339 Sussex St, Sydney NSW 2000',pill:'已订',cls:'ok'},
   {t:'杰维斯湾 · 卡拉拉海湾 40 Tidy Close',tm:'10/1 15:00 → 10/2 10:00（1 晚）',tz:'悉尼时间（UTC+10）',
-   sub:'房东 Nicole · 第 4 晚 · 需包车前往，无公共交通',addr:'40 Tidy Close, Callala Bay NSW 2540',map:'40 Tidy Close, Callala Bay NSW 2540',pill:'已订',cls:'ok'},
+   sub:'房东 Nicole · 第 4 晚 · 悉尼段自驾前往（约 200 公里 / 3 小时），无公共交通',addr:'40 Tidy Close, Callala Bay NSW 2540',map:'40 Tidy Close, Callala Bay NSW 2540',pill:'已订',cls:'ok'},
   {t:'墨尔本 · 88 Park Street, South Melbourne',tm:'10/2 → 10/4（2 晚）',tz:'墨尔本时间（10/2–10/3 为 UTC+10，10/4 起 UTC+11）',
    sub:'第 5–6 晚 · 10/2 约 21:00 到店，入住方式待与房东确认',addr:'88 Park St, South Melbourne VIC 3205',map:'88 Park St, South Melbourne VIC 3205',pill:'已订',cls:'ok'},
   {t:'大洋路 · Wongarra 海滨公寓',tm:'10/4 → 10/5（1 晚）',tz:'墨尔本时间（UTC+11，夏令时首日）',
@@ -646,6 +724,9 @@ function loadState(){
 }
 function saveState(){try{localStorage.setItem(KEY,JSON.stringify(STATE))}catch(e){}}
 function dayTz(d){return DAY_HOME[d.color]||'Australia/Sydney'}
+
+/* ========== 当前显示的天（分页） ========== */
+var activeDay=0;
 
 /* ========== ① 此刻关注 ========== */
 function allEvents(){
@@ -695,8 +776,10 @@ function tick(){
 function renderLegend(){
   var box=document.getElementById('legend');box.innerHTML='';
   STATE.days.forEach(function(d,i){
-    var a=document.createElement('a');
-    a.className='chip';a.href='#day-'+i;a.setAttribute('style','--c:var(--'+(d.color)+')');
+    var a=document.createElement('button');
+    a.type='button';a.className='chip';a.setAttribute('data-goday',i);
+    a.setAttribute('style','--c:var(--'+(d.color)+')');
+    a.title='跳到第 '+(i+1)+' 天';
     var dot=document.createElement('i');a.appendChild(dot);
     a.appendChild(document.createTextNode(d.date.slice(5).replace('-','/')+' '+d.city));
     box.appendChild(a);
@@ -765,9 +848,51 @@ function miniMap(d){
   s+='</svg>';
   return s;
 }
+function renderDayStrip(){
+  var strip=document.getElementById('dayStrip');
+  if(!strip) return;
+  strip.innerHTML='';
+  STATE.days.forEach(function(d,i){
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='dchip'+(i===activeDay?' on':'');
+    b.setAttribute('data-goday',i);
+    b.setAttribute('style','--dc:var(--'+d.color+')');
+    b.title='第 '+(i+1)+' 天 · '+d.date.replace(/-/g,'/')+' '+d.title;
+    b.textContent=(i+1);
+    strip.appendChild(b);
+  });
+  var hint=document.getElementById('dayHint');
+  if(hint) hint.textContent='第 '+(activeDay+1)+' 天 / 共 '+STATE.days.length+' 天';
+  var pnum=document.getElementById('pNum');
+  if(pnum) pnum.textContent=(activeDay+1)+' / '+STATE.days.length;
+  var pv=document.getElementById('prevDay'),nx=document.getElementById('nextDay');
+  if(pv) pv.disabled=activeDay<=0;
+  if(nx) nx.disabled=activeDay>=STATE.days.length-1;
+  var pg=document.getElementById('pager'),cur=STATE.days[activeDay];
+  if(pg&&cur) pg.style.setProperty('--c','var(--'+cur.color+')');
+}
+function setDay(i,keepHash){
+  var n=STATE.days.length;
+  if(!n) return;
+  activeDay=Math.max(0,Math.min(n-1,i));
+  renderDays();
+  if(!keepHash){try{history.replaceState(null,'','#day-'+activeDay)}catch(e){}}
+}
+function goDayStrip(){
+  var el=document.getElementById('days');
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
 function renderDays(){
   var box=document.getElementById('daysBox');box.innerHTML='';
-  STATE.days.forEach(function(d,di){
+  if(!STATE.days.length){
+    box.innerHTML='<div class="card"><p style="margin:0;color:var(--ink2);font-size:12.5px">还没有行程，点右上角「编辑」后添加。</p></div>';
+    renderDayStrip();return;
+  }
+  if(activeDay>STATE.days.length-1) activeDay=STATE.days.length-1;
+  if(activeDay<0) activeDay=0;
+  (function(){
+    var di=activeDay,d=STATE.days[di];
     var tz=dayTz(d);
     var ref=null;for(var k=0;k<d.items.length;k++){if(d.items[k].at){ref=d.items[k].at;break}}
     var offs=ref?offLabel(tz,new Date(ref)):'';
@@ -788,10 +913,10 @@ function renderDays(){
         '<p class="nm">'+(it.place?'<a href="'+maps(it.place)+'" target="_blank" rel="noopener">'+esc(it.name)+'</a>':esc(it.name))+
         (it.book?'<span class="bk">需提前订票</span>':'')+'</p>'+
         (it.note?'<p class="nt">'+esc(it.note)+'</p>':'')+
-        '<div class="it-ops"><button class="btn-s" data-ei="'+di+'-'+ii+'">编辑</button>'+
-        '<button class="btn-s" data-mi="'+di+'-'+ii+'">上移</button>'+
-        '<button class="btn-s" data-mid="'+di+'-'+ii+'">下移</button>'+
-        '<button class="btn-s danger" data-di="'+di+'-'+ii+'">删除</button></div>'+
+        '<div class="it-ops"><button class="btn-s" data-ei="'+di+'-'+ii+'" title="编辑">改</button>'+
+        '<button class="btn-s" data-mi="'+di+'-'+ii+'" title="上移">↑</button>'+
+        '<button class="btn-s" data-mid="'+di+'-'+ii+'" title="下移">↓</button>'+
+        '<button class="btn-s danger" data-di="'+di+'-'+ii+'" title="删除">删</button></div>'+
         '</div></div>';
     });
     if(d.stay&&d.stay.name){
@@ -805,8 +930,9 @@ function renderDays(){
     var route='<div class="route-panel" id="rp-'+di+'"></div>';
     el.innerHTML=head+body+route;
     box.appendChild(el);
-  });
-  // 同步展开状态
+  })();
+  renderDayStrip();
+  // 当日路线展开
   box.querySelectorAll('[data-rt]').forEach(function(b){
     b.addEventListener('click',function(){
       var i=b.getAttribute('data-rt'),p=document.getElementById('rp-'+i);
@@ -956,12 +1082,17 @@ document.addEventListener('click',function(e){
   if(t.tagName==='BUTTON'&&t.hasAttribute('data-rt')) return;
   if(t.tagName==='BUTTON'){
     var v;
+    if(t.hasAttribute('data-goday')){
+      setDay(+t.getAttribute('data-goday'));
+      window.setTimeout(function(){var el=document.getElementById('days');if(el) el.scrollIntoView({behavior:'smooth',block:'start'})},0);
+      return;
+    }
     if(t.hasAttribute('data-ei')){v=t.getAttribute('data-ei').split('-');editItem(+v[0],+v[1])}
     else if(t.hasAttribute('data-addi')){addItem(+t.getAttribute('data-addi'))}
     else if(t.hasAttribute('data-editday')){editDay(+t.getAttribute('data-editday'))}
     else if(t.hasAttribute('data-delday')){
       var i=+t.getAttribute('data-delday');
-      if(confirm('删除「'+STATE.days[i].title+'」整天的行程？')){STATE.days.splice(i,1);saveState();renderDays();renderLegend();tick()}
+      if(confirm('删除「'+STATE.days[i].title+'」整天的行程？')){STATE.days.splice(i,1);if(activeDay>STATE.days.length-1) activeDay=Math.max(0,STATE.days.length-1);saveState();renderDays();renderLegend();tick()}
     }
     else if(t.hasAttribute('data-di')){
       v=t.getAttribute('data-di').split('-');
@@ -983,9 +1114,44 @@ document.addEventListener('click',function(e){
     }
   }
 });
-document.getElementById('editTab').addEventListener('click',function(){
-  document.body.classList.toggle('editing');
-  this.classList.toggle('on');
+
+/* ===== 菜单栏：编辑模式 ===== */
+var editBtn=document.getElementById('editBtn');
+editBtn.addEventListener('click',function(){
+  var on=document.body.classList.toggle('editing');
+  editBtn.classList.toggle('on',on);
+  editBtn.textContent=on?'完成编辑':'编辑';
+  editBtn.setAttribute('title',on?'退出编辑模式':'打开编辑模式（改动只保存在本机）');
+});
+
+/* ===== 菜单栏：滚动高亮当前分区 ===== */
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('#navChips .nb-chip'));
+  var secs=chips.map(function(c){return document.getElementById(c.getAttribute('data-sec'))});
+  function hi(){
+    var y=window.pageYOffset+150,best=0;
+    secs.forEach(function(s,i){
+      if(!s) return;
+      var top=s.getBoundingClientRect().top+window.pageYOffset;
+      if(top<=y) best=i;
+    });
+    chips.forEach(function(c,i){c.classList.toggle('on',i===best)});
+  }
+  window.addEventListener('scroll',hi,{passive:true});
+  window.addEventListener('resize',hi);
+  window.addEventListener('load',hi);
+  hi();
+})();
+
+/* ===== 逐日行程：翻页 ===== */
+document.getElementById('prevDay').addEventListener('click',function(){setDay(activeDay-1)});
+document.getElementById('nextDay').addEventListener('click',function(){setDay(activeDay+1)});
+document.addEventListener('keydown',function(e){
+  var tag=(e.target&&e.target.tagName)||'';
+  if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT') return;
+  if(document.getElementById('modal').hidden===false) return;
+  if(e.key==='ArrowLeft') setDay(activeDay-1);
+  else if(e.key==='ArrowRight') setDay(activeDay+1);
 });
 document.getElementById('resetTrip').addEventListener('click',function(){
   if(confirm('恢复为原始行程？你在本机做的修改会全部丢失。')){
@@ -1004,6 +1170,10 @@ document.getElementById('mOk').addEventListener('click',function(){
 /* ========== 启动 ========== */
 function renderAll(){renderLegend();renderOrders();renderDays();renderTodos();tick()}
 STATE=loadState();
+(function(){
+  var m=/#day-(\d+)/.exec(location.hash||'');
+  if(m){var i=+m[1];if(i>=0&&i<STATE.days.length) activeDay=i}
+})();
 renderAll();
 setInterval(tick,1000);
 })();
