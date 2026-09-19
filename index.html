@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>悉尼 · 墨尔本 10 日行程手册</title>
+<style>
+:root{
+  color-scheme:light dark;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --bg:#f6f2e9;--paper:#fffdf7;--paper2:#f1ece0;--ink:#2b2721;--ink2:#6c6457;--ink3:#9a9182;
+  --line:#e0d7c5;--accent:#bd5a3c;--shadow:0 1px 2px rgba(80,66,40,.05),0 10px 26px rgba(80,66,40,.07);
+  --d1:#d4754a;--d2:#c1902c;--d3:#6b9668;--d4:#4488b8;--d5:#8464b0;
+  --d6:#bd6355;--d7:#3a9986;--d8:#2a7472;--d9:#b0733c;--d10:#8a8a86;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#131518;--paper:#1b1e22;--paper2:#22262b;--ink:#eceae4;--ink2:#a7a29a;--ink3:#7a756c;
+  --line:#31363c;--accent:#e08a5f;--shadow:0 1px 2px rgba(0,0,0,.35),0 12px 30px rgba(0,0,0,.3);
+  --d1:#e08a5f;--d2:#d6b45c;--d3:#8cb389;--d4:#6aa6ce;--d5:#a78bd0;
+  --d6:#d88274;--d7:#5cbda6;--d8:#4b9b99;--d9:#cd9159;--d10:#9b9b97;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;
+  background-image:radial-gradient(rgba(120,100,60,.07) 1px,transparent 1px);background-size:18px 18px}
+@media (prefers-color-scheme:dark){body{background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px)}}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 76px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em}
+.hero{padding:30px 0 14px;text-align:center}
+.hero .kicker{font-size:12.5px;letter-spacing:.28em;color:var(--ink3);text-transform:uppercase;margin:0 0 8px}
+.hero h1{margin:0 0 8px;font-size:clamp(23px,6.4vw,33px);line-height:1.25}
+.hero p{margin:0;color:var(--ink2);font-size:13.5px}
+.hero .rule{width:78px;height:6px;margin:16px auto 0;border-top:1.6px dashed var(--line)}
+section{margin-top:30px;scroll-margin-top:14px}
+.sec-title{display:flex;align-items:baseline;gap:9px;margin:0 0 13px}
+.sec-title .num{font-family:var(--serif);font-size:13px;color:var(--accent);border:1.4px dashed var(--accent);
+  border-radius:50%;width:23px;height:23px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.sec-title h2{margin:0;font-size:18.5px}
+.sec-title .hint{margin-left:auto;font-size:12px;color:var(--ink3)}
+.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);
+  border-radius:15px 18px 14px 17px/17px 14px 18px 15px;padding:18px}
+.now{border-left:5px solid var(--accent)}
+.now .label{font-size:12px;letter-spacing:.2em;color:var(--ink3);margin:0 0 6px}
+.now .ev{font-family:var(--serif);font-size:clamp(18px,5.2vw,23px);line-height:1.3;margin:0 0 5px}
+.now .when{font-size:13.5px;color:var(--ink2);margin:0}
+.now .when b{color:var(--ink);font-weight:600}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 0}
+.cd .unit{background:var(--paper2);border:1px dashed var(--line);border-radius:12px 14px 11px 13px;padding:9px 4px;text-align:center}
+.cd .n{font-family:var(--serif);font-size:clamp(21px,6.6vw,28px);line-height:1.05;font-variant-numeric:tabular-nums}
+.cd .u{font-size:11px;color:var(--ink3);letter-spacing:.12em;margin-top:2px}
+.clocks{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;padding-top:13px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink2)}
+.clocks span{font-variant-numeric:tabular-nums;background:var(--paper2);border-radius:999px;padding:4px 12px}
+.clocks b{color:var(--ink);font-weight:600}
+.mapbox{overflow-x:auto}
+.mapbox svg{display:block;width:100%;min-width:660px;height:auto}
+.mapbox svg text.lbl{paint-order:stroke;stroke:var(--paper2);stroke-width:3.6px;stroke-linejoin:round}
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);border:1px solid var(--line);
+  border-radius:999px;padding:4px 11px;background:var(--paper);cursor:pointer;text-decoration:none;white-space:nowrap}
+.chip i{width:9px;height:9px;border-radius:50%;background:var(--c);display:inline-block}
+.chip:hover{border-color:var(--ink3)}
+.ogroup{margin-top:20px}.ogroup:first-of-type{margin-top:0}
+.ogroup>h3{margin:0 0 10px;font-size:14.5px;color:var(--ink2);letter-spacing:.04em}
+.oitem{border:1px solid var(--line);border-radius:13px 15px 12px 14px;padding:13px 14px;background:var(--paper);margin-bottom:10px}
+.oitem .t{font-weight:600;font-size:14.5px;margin:0 0 3px}
+.oitem .tm{font-size:13px;color:var(--accent);font-variant-numeric:tabular-nums;margin:0 0 2px}
+.oitem .tz{font-size:11.5px;color:var(--ink3);margin:0 0 5px}
+.oitem .sub{font-size:12.5px;color:var(--ink2);margin:0 0 6px}
+.oitem .addr{font-size:13px;margin:0;color:var(--ink2)}
+.oitem .addr a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink3)}
+.oitem .addr a:hover{color:var(--accent)}
+.pill{display:inline-block;font-size:11px;padding:1.5px 8px;border-radius:999px;border:1px dashed var(--line);color:var(--ink3);margin-right:6px}
+.pill.ok{border-color:#4f9a6a;color:#4f9a6a}
+.pill.warn{border-color:var(--accent);color:var(--accent)}
+.d1{--c:var(--d1)}.d2{--c:var(--d2)}.d3{--c:var(--d3)}.d4{--c:var(--d4)}.d5{--c:var(--d5)}
+.d6{--c:var(--d6)}.d7{--c:var(--d7)}.d8{--c:var(--d8)}.d9{--c:var(--d9)}.d10{--c:var(--d10)}
+.day{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);
+  border-radius:15px 18px 14px 17px/17px 14px 18px 15px;margin-bottom:14px;overflow:hidden;scroll-margin-top:12px}
+.day-head{display:flex;align-items:flex-start;gap:11px;padding:14px 16px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--c) 10%,transparent),transparent)}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--c);flex:0 0 auto;margin-top:7px;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent)}
+.day-head .h{flex:1;min-width:0}
+.day-head .d{font-size:12px;color:var(--ink3);letter-spacing:.06em;margin:0 0 2px;font-variant-numeric:tabular-nums}
+.day-head .t{font-family:var(--serif);font-size:16.5px;margin:0;line-height:1.35}
+.day-head .m{font-size:12px;color:var(--ink2);margin:3px 0 0}
+.rt{flex:0 0 auto;font-size:12px;color:var(--ink2);border:1px solid var(--line);background:var(--paper);
+  border-radius:999px;padding:4px 11px;cursor:pointer;font-family:var(--sans)}
+.rt:hover{border-color:var(--ink3);color:var(--ink)}
+.day-body{padding:6px 16px 14px}
+.it{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.it:last-child{border-bottom:0}
+.it .tt{flex:0 0 60px;font-variant-numeric:tabular-nums;font-size:13px;color:var(--ink3);padding-top:1px;font-family:var(--serif)}
+.it .tt.has{color:var(--c);font-weight:600}
+.it .mn{flex:1;min-width:0}
+.it .nm{font-size:14.5px;font-weight:600;margin:0 0 2px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px}
+.it .nm a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ink3)}
+.it .nm a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.it .nt{font-size:12.5px;color:var(--ink2);margin:0}
+.it .bk{font-size:10.5px;color:var(--accent);border:1px dashed var(--accent);border-radius:999px;padding:0 7px;white-space:nowrap;font-weight:400}
+.it.fly{background:linear-gradient(90deg,color-mix(in srgb,var(--c) 8%,transparent),transparent)}
+.it.fly .nm::before{content:"✈";margin-right:3px;color:var(--c)}
+.it-ops{display:none;gap:6px;margin-top:7px;flex-wrap:wrap}
+body.editing .it-ops{display:flex}
+.day-stay{margin:12px 0 0;padding:10px 12px;border-radius:11px;background:var(--paper2);font-size:12.5px;color:var(--ink2)}
+.day-stay b{color:var(--ink)}
+.day-stay a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink3)}
+.route-panel{display:none;padding:0 16px 16px}
+.route-panel.on{display:block}
+.rmap{border:1px solid var(--line);border-radius:12px;background:var(--paper2);padding:6px;margin:0 0 12px}
+.rmap svg{display:block;width:100%;height:auto}
+.stops{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}
+.stop{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);text-decoration:none;
+  border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--paper)}
+.stop b{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;
+  background:var(--c);color:#fff;font-size:10px;font-weight:600}
+.stop:hover{border-color:var(--c)}
+.navbtn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;text-decoration:none;
+  background:var(--c);color:#fff;border-radius:999px;padding:8px 16px}
+.navbtn:hover{filter:brightness(1.08)}
+.day-edit{margin-top:12px;display:none;gap:8px;flex-wrap:wrap}
+body.editing .day-edit{display:flex}
+.btn-s{font-size:12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:4px 11px;cursor:pointer;color:var(--ink2);font-family:var(--sans)}
+.btn-s:hover{border-color:var(--ink3);color:var(--ink)}
+.btn-s.danger:hover{border-color:var(--accent);color:var(--accent)}
+.todo{list-style:none;margin:0;padding:0;counter-reset:td}
+.todo li{position:relative;padding:11px 0 11px 34px;border-bottom:1px dashed var(--line);font-size:13.5px}
+.todo li:last-child{border-bottom:0}
+.todo li::before{counter-increment:td;content:counter(td,decimal-leading-zero);position:absolute;left:0;top:12px;
+  font-family:var(--serif);font-size:11.5px;color:var(--accent);width:24px;text-align:right}
+.i-ops{display:none;gap:6px;margin-top:6px;flex-wrap:wrap}
+body.editing .i-ops{display:flex}
+.todo-foot{margin-top:14px;padding-top:13px;border-top:1px dashed var(--line);display:none}
+body.editing .todo-foot{display:block}
+.tips{margin:0;padding:0;list-style:none}
+.tips li{padding:11px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.tips li:last-child{border-bottom:0}
+.tips b{color:var(--ink)}
+.tips .k{font-family:var(--serif);color:var(--accent);margin-right:4px}
+.edittab{position:fixed;right:14px;bottom:14px;z-index:40;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);background:var(--paper);color:var(--ink2);font-size:17px;cursor:pointer;
+  box-shadow:var(--shadow);opacity:.5;transition:opacity .2s;line-height:1}
+.edittab:hover,.edittab.on{opacity:1;color:var(--accent);border-color:var(--accent)}
+.editbar{position:fixed;left:14px;bottom:14px;z-index:40;display:none;gap:8px;align-items:center}
+body.editing .editbar{display:flex}
+.editbar .note{font-size:11.5px;color:var(--ink3);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px;box-shadow:var(--shadow);max-width:62vw}
+.modal{position:fixed;inset:0;z-index:60;background:rgba(28,24,18,.5);display:flex;align-items:center;justify-content:center;padding:16px}
+.modal[hidden]{display:none}
+.modal-box{background:var(--paper);border-radius:14px;padding:18px;width:100%;max-width:420px;max-height:86vh;overflow:auto;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.modal-box h3{margin:0 0 14px;font-size:16px}
+.modal-box label{display:block;font-size:12px;color:var(--ink2);margin-bottom:11px}
+.modal-box input[type=text],.modal-box textarea,.modal-box select{width:100%;margin-top:4px;padding:8px 10px;font-size:14px;
+  border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font-family:var(--sans)}
+.modal-box textarea{min-height:62px;resize:vertical}
+.modal-box .ck{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink)}
+.modal-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:6px}
+.modal-actions button{font-size:13.5px;padding:8px 18px;border-radius:9px;cursor:pointer;font-family:var(--sans);
+  border:1px solid var(--line);background:var(--paper);color:var(--ink2)}
+.modal-actions .primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+@media(max-width:520px){
+  .it .tt{flex-basis:52px;font-size:12.5px}
+  .card{padding:15px}
+  .day-body{padding:4px 13px 13px}
+  .route-panel{padding:0 13px 14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="kicker">Sydney &nbsp;·&nbsp; Melbourne</p>
+  <h1>悉尼 · 墨尔本 10 日行程手册</h1>
+  <p>2026 年 9 月 27 日出发 · 5 人 · 全程不租车，城际包车 + 公共交通</p>
+  <div class="rule"></div>
+</header>
+
+<!-- ① 此刻关注 -->
+<section id="now">
+  <div class="sec-title"><span class="num">1</span><h2>此刻关注</h2></div>
+  <div class="card now">
+    <p class="label">下一个行程</p>
+    <p class="ev" id="nowName">正在读取行程…</p>
+    <p class="when" id="nowWhen"></p>
+    <div class="cd" id="cd">
+      <div class="unit"><div class="n" id="cdD">--</div><div class="u">天</div></div>
+      <div class="unit"><div class="n" id="cdH">--</div><div class="u">时</div></div>
+      <div class="unit"><div class="n" id="cdM">--</div><div class="u">分</div></div>
+      <div class="unit"><div class="n" id="cdS">--</div><div class="u">秒</div></div>
+    </div>
+    <div class="clocks" id="clocks"></div>
+  </div>
+</section>
+
+<!-- ② 行程总览地图 -->
+<section id="map">
+  <div class="sec-title"><span class="num">2</span><h2>行程总览</h2><span class="hint">按天着色 · 标出每晚住处</span></div>
+  <div class="card">
+    <div class="mapbox">
+      <svg viewBox="0 0 1000 520" role="img" aria-label="悉尼与墨尔本行程示意图">
+        <rect x="0" y="0" width="1000" height="520" rx="16" style="fill:var(--paper2)"/>
+        <rect x="24" y="76" width="440" height="408" rx="15" style="fill:none;stroke:var(--line)" stroke-dasharray="7 6"/>
+        <rect x="536" y="76" width="440" height="408" rx="15" style="fill:none;stroke:var(--line)" stroke-dasharray="7 6"/>
+        <text class="lbl" x="46" y="104" style="font-size:16px;fill:var(--ink2);font-family:var(--serif);letter-spacing:1.5px">悉尼 · 新南威尔士</text>
+        <text class="lbl" x="558" y="104" style="font-size:16px;fill:var(--ink2);font-family:var(--serif);letter-spacing:1.5px">墨尔本 · 维多利亚</text>
+
+        <g style="fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round">
+          <path d="M398,452 q9,-7 18,0 t18,0"/>
+          <path d="M404,468 q9,-7 18,0 t18,0"/>
+          <path d="M546,468 q9,-7 18,0 t18,0"/>
+          <path d="M944,300 q9,-7 18,0 t18,0"/>
+        </g>
+        <text class="lbl" x="428" y="440" style="font-size:11px;fill:var(--ink3);font-family:var(--sans)">太平洋</text>
+
+        <!-- 航线 -->
+        <path d="M392,228 C 440,110 520,88 600,146" style="fill:none;stroke:var(--ink3);stroke-width:1.8;stroke-dasharray:6 6"/>
+        <g transform="translate(496,124) rotate(24)">
+          <path d="M-9,0 L2,-3 L9,0 L2,3 Z" style="fill:var(--ink2)"/>
+          <path d="M-1,-2.6 L-6,-9 L-2.6,-9 L1,-2.4 Z" style="fill:var(--ink2)"/>
+        </g>
+        <text class="lbl" x="496" y="42" text-anchor="middle" style="font-size:13px;fill:var(--ink);font-family:var(--sans);font-weight:600">✈ QF479 · 1 小时 35 分</text>
+        <text class="lbl" x="496" y="58" text-anchor="middle" style="font-size:11.5px;fill:var(--ink3);font-family:var(--sans)">10/2 18:15 悉尼 → 19:50 墨尔本</text>
+
+        <!-- ===== 悉尼区域 ===== -->
+        <g style="fill:none;stroke-linecap:round;stroke-linejoin:round">
+          <path d="M392,228 C 372,206 348,178 330,150" style="stroke:var(--d1);stroke-width:2.4"/>
+          <path d="M330,150 C 306,176 288,194 274,206" style="stroke:var(--d2);stroke-width:2.4"/>
+          <path d="M330,150 C 258,150 180,168 120,196" style="stroke:var(--d3);stroke-width:2.4;stroke-dasharray:7 6"/>
+          <path d="M274,206 C 292,252 306,288 322,316" style="stroke:var(--d4);stroke-width:2.4"/>
+          <path d="M322,316 C 304,338 278,350 250,362" style="stroke:var(--d4);stroke-width:2.4"/>
+          <path d="M250,362 C 226,384 210,396 196,404" style="stroke:var(--d5);stroke-width:2.4"/>
+          <path d="M196,404 C 250,442 352,420 400,336" style="stroke:var(--d5);stroke-width:2.4"/>
+          <path d="M400,336 C 430,300 424,258 392,228" style="stroke:var(--d5);stroke-width:2.4"/>
+        </g>
+        <g style="stroke-width:2.6">
+          <circle cx="120" cy="196" r="6.5" style="fill:var(--paper);stroke:var(--d3)"/>
+          <circle cx="330" cy="150" r="7.5" style="fill:var(--paper);stroke:var(--d1)"/>
+          <circle cx="392" cy="228" r="6" style="fill:var(--paper);stroke:var(--d1)"/>
+          <circle cx="322" cy="316" r="6" style="fill:var(--paper);stroke:var(--d4)"/>
+          <circle cx="400" cy="336" r="6" style="fill:var(--paper);stroke:var(--d5)"/>
+          <circle cx="196" cy="404" r="6" style="fill:var(--paper);stroke:var(--d5)"/>
+        </g>
+        <g style="font-size:12px;font-family:var(--sans);fill:var(--ink)">
+          <text class="lbl" x="120" y="222" text-anchor="middle">蓝山 · 9/30</text>
+          <text class="lbl" x="330" y="136" text-anchor="middle">悉尼 · 环形码头</text>
+          <text class="lbl" x="330" y="122" text-anchor="middle" style="font-size:10.5px;fill:var(--ink3)">9/28–9/29</text>
+          <text class="lbl" x="404" y="236" text-anchor="start">悉尼机场</text>
+          <text class="lbl" x="404" y="250" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">T1 / T3</text>
+          <text class="lbl" x="310" y="302" text-anchor="end">凯马喷水洞 · 10/1</text>
+          <text class="lbl" x="386" y="340" text-anchor="end">海崖大桥</text>
+          <text class="lbl" x="266" y="372" text-anchor="start">卡拉拉海湾</text>
+          <text class="lbl" x="266" y="386" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">10/1–10/2</text>
+          <text class="lbl" x="182" y="400" text-anchor="end">海姆斯海滩 · 10/2</text>
+        </g>
+        <g transform="translate(274,206)"><circle r="11" style="fill:var(--d2)"/><text y="3.8" text-anchor="middle" style="font-size:11.5px;font-family:var(--sans);font-weight:700;fill:#fff">1</text></g>
+        <g transform="translate(250,362)"><circle r="11" style="fill:var(--d4)"/><text y="3.8" text-anchor="middle" style="font-size:11.5px;font-family:var(--sans);font-weight:700;fill:#fff">2</text></g>
+
+        <!-- ===== 墨尔本区域 ===== -->
+        <g style="fill:none;stroke-linecap:round;stroke-linejoin:round">
+          <path d="M600,146 C 632,170 660,192 686,208" style="stroke:var(--d5);stroke-width:2.4"/>
+          <path d="M686,208 C 730,190 780,168 812,152" style="stroke:var(--d6);stroke-width:2.4"/>
+          <path d="M812,152 C 852,130 890,118 920,112" style="stroke:var(--d9);stroke-width:2.4;stroke-dasharray:7 6"/>
+          <path d="M812,152 C 842,192 858,216 856,240" style="stroke:var(--d9);stroke-width:2.4;stroke-dasharray:7 6"/>
+          <path d="M812,152 C 800,202 780,236 742,258" style="stroke:var(--d7);stroke-width:2.4"/>
+          <path d="M742,258 C 722,284 704,296 690,306" style="stroke:var(--d7);stroke-width:2.4"/>
+          <path d="M690,306 C 672,320 660,332 648,340" style="stroke:var(--d7);stroke-width:2.4"/>
+          <path d="M648,340 L630,366" style="stroke:var(--d8);stroke-width:2.4"/>
+          <path d="M630,366 C 616,378 606,386 596,392" style="stroke:var(--d8);stroke-width:2.4"/>
+          <path d="M596,392 C 578,410 568,420 560,428" style="stroke:var(--d8);stroke-width:2.4"/>
+        </g>
+        <g style="stroke-width:2.6">
+          <circle cx="600" cy="146" r="6" style="fill:var(--paper);stroke:var(--d5)"/>
+          <circle cx="812" cy="152" r="7.5" style="fill:var(--paper);stroke:var(--d6)"/>
+          <circle cx="856" cy="240" r="6" style="fill:var(--paper);stroke:var(--d9)"/>
+          <circle cx="920" cy="112" r="6" style="fill:var(--paper);stroke:var(--d9)"/>
+          <circle cx="742" cy="258" r="6" style="fill:var(--paper);stroke:var(--d7)"/>
+          <circle cx="690" cy="306" r="5.5" style="fill:var(--paper);stroke:var(--d7)"/>
+          <circle cx="648" cy="340" r="5.5" style="fill:var(--paper);stroke:var(--d7)"/>
+          <circle cx="596" cy="392" r="5.5" style="fill:var(--paper);stroke:var(--d8)"/>
+          <circle cx="560" cy="428" r="6" style="fill:var(--paper);stroke:var(--d8)"/>
+        </g>
+        <g style="font-size:12px;font-family:var(--sans);fill:var(--ink)">
+          <text class="lbl" x="600" y="132" text-anchor="start">墨尔本机场</text>
+          <text class="lbl" x="600" y="118" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">10/2 抵达 · 10/7 返程</text>
+          <text class="lbl" x="812" y="138" text-anchor="middle">墨尔本 · 市区</text>
+          <text class="lbl" x="812" y="124" text-anchor="middle" style="font-size:10.5px;fill:var(--ink3)">10/3 · 10/5 · 10/6</text>
+          <text class="lbl" x="872" y="236" text-anchor="start">圣基尔达</text>
+          <text class="lbl" x="872" y="250" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">小企鹅 · 10/6</text>
+          <text class="lbl" x="920" y="98" text-anchor="middle">贝尔格雷夫</text>
+          <text class="lbl" x="920" y="138" text-anchor="middle" style="font-size:10.5px;fill:var(--ink3)">蒸汽火车 · 10/6</text>
+          <text class="lbl" x="676" y="232" text-anchor="end">88 Park St · 南墨尔本</text>
+          <text class="lbl" x="676" y="246" text-anchor="end" style="font-size:10.5px;fill:var(--ink3)">第 5–6 晚</text>
+          <text class="lbl" x="752" y="216" text-anchor="middle">38 Rose Lane</text>
+          <text class="lbl" x="752" y="230" text-anchor="middle" style="font-size:10.5px;fill:var(--ink3)">第 8–9 晚</text>
+          <text class="lbl" x="742" y="282" text-anchor="middle">托尔坎 · 贝尔斯海滩</text>
+          <text class="lbl" x="742" y="296" text-anchor="middle" style="font-size:10.5px;fill:var(--ink3)">10/4</text>
+          <text class="lbl" x="676" y="302" text-anchor="end">洛恩</text>
+          <text class="lbl" x="676" y="316" text-anchor="end" style="font-size:10.5px;fill:var(--ink3)">10/4 午餐</text>
+          <text class="lbl" x="634" y="336" text-anchor="end">肯尼特河 · 看考拉</text>
+          <text class="lbl" x="646" y="362" text-anchor="start">Wongarra 海滨公寓</text>
+          <text class="lbl" x="646" y="376" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">第 7 晚</text>
+          <text class="lbl" x="610" y="396" text-anchor="start">阿波罗湾</text>
+          <text class="lbl" x="610" y="410" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">10/5 早餐</text>
+          <text class="lbl" x="574" y="424" text-anchor="start">十二门徒岩</text>
+          <text class="lbl" x="574" y="438" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">洛克阿德峡谷 · 10/5</text>
+        </g>
+        <text class="lbl" x="800" y="300" text-anchor="middle" style="font-size:13px;font-family:var(--serif);fill:var(--ink3)">大 洋 路</text>
+        <text class="lbl" x="800" y="318" text-anchor="middle" style="font-size:10.5px;font-family:var(--sans);fill:var(--ink3)">10/4–10/5 · 包车两天</text>
+
+        <g transform="translate(686,208)"><circle r="11" style="fill:var(--d6)"/><text y="3.8" text-anchor="middle" style="font-size:11.5px;font-family:var(--sans);font-weight:700;fill:#fff">3</text></g>
+        <g transform="translate(630,366)"><circle r="11" style="fill:var(--d8)"/><text y="3.8" text-anchor="middle" style="font-size:11.5px;font-family:var(--sans);font-weight:700;fill:#fff">4</text></g>
+        <g transform="translate(752,190)"><circle r="11" style="fill:var(--d9)"/><text y="3.8" text-anchor="middle" style="font-size:11.5px;font-family:var(--sans);font-weight:700;fill:#fff">5</text></g>
+
+        <text class="lbl" x="500" y="504" text-anchor="middle" style="font-size:11px;fill:var(--ink3);font-family:var(--sans)">示意图 · 非等比例，仅表达位置与路线关系</text>
+      </svg>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="legend">
+      <span class="chip" style="--c:var(--d2);cursor:default"><i></i>① 339 Sussex St · 第 1–3 晚</span>
+      <span class="chip" style="--c:var(--d4);cursor:default"><i></i>② 40 Tidy Close · 第 4 晚</span>
+      <span class="chip" style="--c:var(--d6);cursor:default"><i></i>③ 88 Park St · 第 5–6 晚</span>
+      <span class="chip" style="--c:var(--d8);cursor:default"><i></i>④ Wongarra 公寓 · 第 7 晚</span>
+      <span class="chip" style="--c:var(--d9);cursor:default"><i></i>⑤ 38 Rose Lane · 第 8–9 晚</span>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 已确认订单 -->
+<section id="orders">
+  <div class="sec-title"><span class="num">3</span><h2>已确认订单</h2><span class="hint">点地址可唤起 Google 地图</span></div>
+  <div class="card" id="ordersBox"></div>
+</section>
+
+<!-- ④ 逐日行程 -->
+<section id="days">
+  <div class="sec-title"><span class="num">4</span><h2>逐日行程</h2><span class="hint">点标题下「当日路线」展开导航</span></div>
+  <div id="daysBox"></div>
+</section>
+
+<!-- ⑤ 待办清单 -->
+<section id="todo">
+  <div class="sec-title"><span class="num">5</span><h2>待办清单</h2><span class="hint">办完一项点编辑器的「已办」即可移除</span></div>
+  <div class="card">
+    <ul class="todo" id="todoBox"></ul>
+    <div class="todo-foot"><button class="btn-s" id="addTodo">＋ 添加一项</button></div>
+  </div>
+</section>
+
+<!-- ⑥ 实用贴士 -->
+<section id="tips">
+  <div class="sec-title"><span class="num">6</span><h2>实用贴士</h2></div>
+  <div class="card">
+    <ul class="tips">
+      <li><span class="k">时区</span><b>10 月 4 日凌晨 2:00 起，新州与维州进入夏令时</b>，时钟直接跳到 3:00，两州由 UTC+10 变为 UTC+11。手机会自动切换，但当晚少睡 1 小时，10/4 这天别排太满。所有倒计时按绝对时刻计算，不受切换影响。</li>
+      <li><span class="k">交通卡</span>悉尼用 <b>Opal 卡</b>（火车 / 公交 / 渡轮通用，便利店可购），墨尔本用 <b>Myki 卡</b>（电车 / 火车 / 公交）。两城刷卡上下车都要刷，逃票罚款很重。</li>
+      <li><span class="k">打车</span>澳洲用 <b>Uber</b> 或 <b>DiDi</b>，进市区也可打 13cabs。墨尔本市区有免费电车区（Free Tram Zone），弗林德斯街、女王市场一带都在圈内。</li>
+      <li><span class="k">退税</span>离境退税 TRS：<b>同一商家累计满 A$300</b>、离境前 60 天内购买、随身携带商品与小票。墨尔本机场 T2 出发层有 TRS 柜台，10/7 是早班机，退税排队要留足时间。</li>
+      <li><span class="k">大洋路</span>沿线加油站稀少且偏贵，<b>离开墨尔本前加满油</b>；Wongarra 一带手机信号弱，出发前把导航和住宿联系方式离线存好。</li>
+      <li><span class="k">看企鹅</span>圣基尔达防波堤的小蓝企鹅是<b>野生保护动物</b>：禁闪光灯、禁大声喧哗、禁投喂、保持两米以上距离，日落后不要用强光手电乱照。</li>
+      <li><span class="k">天气</span>墨尔本一天四季，10 月初白天 15–20℃、早晚偏凉且多风，<b>薄外套 + 防风衣</b>常备；日照强，防晒也别省。蓝山和十二门徒岩风大，比市区冷一档。</li>
+      <li><span class="k">假期</span>10/3–10/5 是长周末（10/5 为新州劳动节），加上学校假期，<b>热门景点、餐厅、包车都建议提前订</b>；十二门徒岩上午 11 点前相对清静，你们正好错峰。</li>
+      <li><span class="k">紧急</span>报警 / 救护 / 消防统一拨 <b>000</b>。</li>
+      <li><span class="k">电源</span>澳洲插座为 <b>I 型三脚扁插</b>（国内两脚可用，三脚需转换头），电压 220–240V，国内电器可直接使用。</li>
+      <li><span class="k">饮水</span>两地自来水可直接饮用；超市买瓶装水更便宜，超市在水产区买海鲜还能现加工。</li>
+      <li><span class="k">小费</span>澳洲<b>不强制小费</b>，餐厅账单已含服务费，满意可留 5–10%。</li>
+    </ul>
+  </div>
+</section>
+
+<button class="edittab" id="editTab" title="切换编辑模式">✎</button>
+<div class="editbar" id="editBar">
+  <button class="btn-s" id="resetTrip">恢复原稿</button>
+  <span class="note">编辑只保存在本机浏览器，不影响他人看到的内容</span>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-box">
+    <h3 id="mTitle"></h3>
+    <div id="mFields"></div>
+    <div class="modal-actions">
+      <button id="mCancel">取消</button>
+      <button class="primary" id="mOk">保存</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ========== 工具 ========== */
+var pad=function(n){return String(n).padStart(2,'0')};
+var WD=['周日','周一','周二','周三','周四','周五','周六'];
+var DAY_HOME={d1:'Australia/Sydney',d2:'Australia/Sydney',d3:'Australia/Sydney',d4:'Australia/Sydney',d5:'Australia/Sydney',
+  d6:'Australia/Melbourne',d7:'Australia/Melbourne',d8:'Australia/Melbourne',d9:'Australia/Melbourne',d10:'Australia/Melbourne'};
+
+function offMinutes(tz,d){
+  try{
+    var parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'shortOffset'}).formatToParts(d);
+    var s=(parts.filter(function(p){return p.type==='timeZoneName'})[0]||{}).value||'GMT+0';
+    var m=/GMT([+-])(\d{1,2})(?::(\d{2}))?/.exec(s);
+    if(!m) return 0;
+    return (m[1]==='-'?-1:1)*(parseInt(m[2],10)*60+(m[3]?parseInt(m[3],10):0));
+  }catch(e){return 0}
+}
+function offLabel(tz,d){
+  var t=offMinutes(tz,d),a=Math.abs(t);
+  return 'UTC'+(t<0?'-':'+')+Math.floor(a/60)+(a%60?':'+pad(a%60):'');
+}
+function tzCN(tz){
+  if(tz==='Australia/Sydney') return '悉尼';
+  if(tz==='Australia/Melbourne') return '墨尔本';
+  if(tz==='Asia/Hong_Kong') return '中国香港';
+  return tz.replace(/_/g,' ');
+}
+function fmt(iso,tz,opt){
+  if(!iso) return '';
+  var o={timeZone:tz,hour12:false};
+  for(var k in opt) o[k]=opt[k];
+  return new Intl.DateTimeFormat('zh-CN',o).format(new Date(iso));
+}
+function localToInstant(dateStr,hhmm,tz){
+  var p=dateStr.split('-').map(Number),q=(hhmm||'00:00').split(':').map(Number);
+  var base=Date.UTC(p[0],p[1]-1,p[2],q[0]||0,q[1]||0,0);
+  var t=base;
+  for(var i=0;i<3;i++){t=base-offMinutes(tz,new Date(t))*60000}
+  return new Date(t).toISOString();
+}
+function maps(q){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+/* ========== 默认行程数据（at 为绝对时刻，含真实时区偏移） ========== */
+function D(date,wd,color,city,title,mode,stay,items){return {date:date,wd:wd,color:color,city:city,title:title,mode:mode,stay:stay,items:items}}
+function I(at,time,name,note,place,lat,lng,tag,book){return {at:at,time:time,name:name,note:note,place:place,lat:lat,lng:lng,tag:tag,book:!!book}}
+
+var DEFAULTS={
+days:[
+ D('2026-09-28','周一','d1','悉尼','落地悉尼 · 海港初见','transit',
+  {name:'339 Sussex Street（第 1–3 晚）',addr:'339 Sussex St, Sydney NSW 2000',place:'339 Sussex St, Sydney NSW 2000'},
+  [
+  I('2026-09-28T06:10:00+10:00','06:10','降落悉尼金斯福德·史密斯机场 T1','国泰 CX111 · 空客 A350-900 · 飞行 9 小时 5 分 · 起降均为当地时间','Sydney Airport Terminal 1 International, Mascot NSW 2020',-33.9344,151.1657,'flight'),
+  I('2026-09-28T06:50:00+10:00','06:50','预约接机车上车','7 座 · 13 公里约 20 分钟 · 含 60 分钟免费等待 · 服务商「远山旅游」','Sydney Airport Terminal 1, Mascot NSW 2020',-33.9344,151.1657,'car'),
+  I('2026-09-28T07:20:00+10:00','07:20','到住处寄存行李','房东 Milan · 15:00 才能正式入住，先寄行李、洗漱、换身衣服','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
+  I('2026-09-28T10:00:00+10:00','10:00','环形码头 Circular Quay 漫步','住处坐轻轨或步行约 15 分钟，先去码头看海港最开阔的一段','Circular Quay, Sydney NSW 2000',-33.8610,151.2105),
+  I('2026-09-28T10:40:00+10:00','10:40','悉尼歌剧院外景 + 海港大桥','内部导览排在 9/29，今天先在歌剧院广场和岩石区一侧取景','Sydney Opera House, Bennelong Point, Sydney NSW 2000',-33.8568,151.2153),
+  I('2026-09-28T12:30:00+10:00','12:30','岩石区 The Rocks 午餐','步行约 8 分钟，历史街区里的酒馆与咖啡馆密集','The Rocks, Sydney NSW 2000',-33.8599,151.2087),
+  I('2026-09-28T14:00:00+10:00','14:00','办入住、补觉倒时差','长途飞行后睡 2 小时，比硬撑着多逛两个景点划算','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
+  I('2026-09-28T17:30:00+10:00','17:30','达令港 Darling Harbour 晚餐 + 夜景','步行 10 分钟，水边餐厅多，饭后沿岸散步','Darling Harbour, Sydney NSW 2000',-33.8740,151.2010),
+  I('2026-09-28T20:30:00+10:00','20:30','回住处休息','明天 09:00 有歌剧院导览，早点睡','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
+  ]),
+ D('2026-09-29','周二','d2','悉尼','歌剧院入内 · 港湾地标一日','walking',
+  {name:'339 Sussex Street（第 1–3 晚）',addr:'339 Sussex St, Sydney NSW 2000',place:'339 Sussex St, Sydney NSW 2000'},
+  [
+  I('2026-09-29T09:00:00+10:00','09:00','悉尼歌剧院 1 小时中文导览','每日 09:00–17:00 场次，中文场次少，务必提前订票；集合点在歌剧院 Welcome Centre','Sydney Opera House, Bennelong Point, Sydney NSW 2000',-33.8568,151.2153,'book',true),
+  I('2026-09-29T10:30:00+10:00','10:30','皇家植物园 + 麦考利夫人座椅','从歌剧院沿水边步行 10 分钟，这里是同时拍到歌剧院与海港大桥的最佳机位','Mrs Macquaries Chair, 1D Mrs Macquaries Rd, Sydney NSW 2000',-33.8597,151.2228),
+  I('2026-09-29T12:00:00+10:00','12:00','悉尼鱼市场 Fish Market 午餐','打车或公交约 20 分钟，生蚝和龙虾刺身现买现吃，人多但翻台快','Sydney Fish Market, Bank St, Pyrmont NSW 2009',-33.8685,151.1925),
+  I('2026-09-29T14:00:00+10:00','14:00','海港大桥步行 + Pylon Lookout 瞭望塔','从岩石区一侧上桥，桥面人行道单程约 20 分钟，瞭望塔现场购票','Pylon Lookout, Sydney Harbour Bridge, Sydney NSW 2000',-33.8523,151.2108),
+  I('2026-09-29T16:30:00+10:00','16:30','环形码头坐渡轮兜一圈','任选一班 F1 线，坐到船上吹海风看天际线，是最省钱的观光方式','Circular Quay Wharf, Sydney NSW 2000',-33.8610,151.2105),
+  I('2026-09-29T18:00:00+10:00','18:00','悉尼塔观景台 Sydney Tower Eye','360° 俯瞰全城，日落前后上塔效果最好','Sydney Tower Eye, 100 Market St, Sydney NSW 2000',-33.8704,151.2088),
+  I('2026-09-29T19:30:00+10:00','19:30','晚餐（唐人街 Haymarket / 达令港）','悉尼塔往南步行 10 分钟就是唐人街，中餐选择多','Haymarket, Sydney NSW 2000',-33.8795,151.2060)
+  ]),
+ D('2026-09-30','周三','d3','悉尼','蓝山一日（火车往返，无需自驾）','walking',
+  {name:'339 Sussex Street（第 1–3 晚）',addr:'339 Sussex St, Sydney NSW 2000',place:'339 Sussex St, Sydney NSW 2000'},
+  [
+  I('2026-09-30T07:50:00+10:00','07:50','中央车站 Central 出发','蓝山线直达 Katoomba，刷 Opal 卡，车程约 2 小时','Central Station, Eddy Ave, Sydney NSW 2000',-33.8830,151.2070),
+  I('2026-09-30T10:00:00+10:00','10:00','抵达 Katoomba 小镇','出站可换乘 686 路观光巴士，也可打车（约 10 分钟到回声角）','Katoomba Station, Katoomba NSW 2780',-33.7120,150.3120),
+  I('2026-09-30T10:30:00+10:00','10:30','回声角 Echo Point + 三姐妹峰','免费观景台，就在悬崖边，风大要穿外套','Echo Point Lookout, Katoomba NSW 2780',-33.7320,150.3120),
+  I('2026-09-30T11:30:00+10:00','11:30','蓝山景观世界 Scenic World','Discovery Pass 含空中缆车、索道、观光小火车与雨林步道，建议留 2–3 小时；需提前订票','Scenic World, 1 Violet St, Katoomba NSW 2780',-33.7293,150.3010,'book',true),
+  I('2026-09-30T15:00:00+10:00','15:00','卢拉小镇 Leura 下午茶','从 Katoomba 坐一站火车即到，主街有茶屋和手作小店','Leura Mall, Leura NSW 2780',-33.7120,150.3310),
+  I('2026-09-30T17:00:00+10:00','17:00','火车返回悉尼','Katoomba → Central 约 2 小时，车上正好休息','Katoomba Station, Katoomba NSW 2780',-33.7120,150.3120),
+  I('2026-09-30T19:30:00+10:00','19:30','回住处，晚餐就近解决','明天要带着行李南下，先把要用的东西整理好','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
+  ]),
+ D('2026-10-01','周四','d4','悉尼 → 杰维斯湾','南下杰维斯湾 · 包车第 1 天','driving',
+  {name:'40 Tidy Close, Callala Bay（第 4 晚）',addr:'40 Tidy Close, Callala Bay NSW 2540',place:'40 Tidy Close, Callala Bay NSW 2540'},
+  [
+  I('2026-10-01T09:00:00+10:00','09:00','退房、行李装车','退房截止 10:00，包车 09:00 到门口，行李全部装车','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
+  I('2026-10-01T09:30:00+10:00','09:30','出发南下（包车）','悉尼 → 卡拉拉海湾约 200 公里、3 小时，走王子公路一路向南','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'car'),
+  I('2026-10-01T11:30:00+10:00','11:30','凯马喷水洞 Kiama Blowhole + 灯塔','途中停留约 1 小时，风大时水柱能喷十几米高，观景步道免费','Kiama Blowhole, Blowhole Point Rd, Kiama NSW 2533',-34.6716,150.8620),
+  I('2026-10-01T12:30:00+10:00','12:30','凯马 / 杰林冈 午餐','小镇咖啡馆和炸鱼薯条店为主，建议在凯马解决','Kiama NSW 2533',-34.6716,150.8620),
+  I('2026-10-01T15:00:00+10:00','15:00','抵达卡拉拉海湾，入住 40 Tidy Close','房东 Nicole · 入住时间 15:00','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
+  I('2026-10-01T16:30:00+10:00','16:30','卡拉拉海滩 Callala Beach 散步','步行可达，湾内水面平静适合下水，10 月水温仍偏凉','Callala Beach, Callala Bay NSW 2540',-35.0000,150.7200),
+  I('2026-10-01T18:30:00+10:00','18:30','小镇晚餐','卡拉拉海湾餐馆不多，最好提前订位；也可在超市买海鲜回住处自己做','Callala Bay NSW 2540',-35.0044,150.6889),
+  I('2026-10-01T20:00:00+10:00','20:00','回住处','明天上午去海姆斯海滩，07:30 起','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay')
+  ]),
+ D('2026-10-02','周五','d5','杰维斯湾 → 墨尔本','白沙滩 · 大太平洋公路 · 飞往墨尔本','driving',
+  {name:'88 Park Street, South Melbourne（第 5–6 晚）',addr:'88 Park St, South Melbourne VIC 3205',place:'88 Park St, South Melbourne VIC 3205'},
+  [
+  I('2026-10-02T07:30:00+10:00','07:30','早餐、收拾行李','与房东谈好提前退房（截止 10:00），行李全部装车','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
+  I('2026-10-02T08:15:00+10:00','08:15','出发去海姆斯海滩','车程约 20 分钟','Hyams Beach, NSW 2540',-35.1008,150.6890),
+  I('2026-10-02T08:45:00+10:00','08:45','海姆斯海滩 Hyams Beach','被公认的白沙之最，沙细水清，浅滩适合玩水','Hyams Beach, NSW 2540',-35.1008,150.6890),
+  I('2026-10-02T09:30:00+10:00','09:30','返回住处办退房','退房截止 10:00，务必卡住时间','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
+  I('2026-10-02T10:15:00+10:00','10:15','出发北上，走大太平洋公路','卡拉拉海湾 → 悉尼机场约 190 公里','Callala Bay NSW 2540',-35.0044,150.6889,'car'),
+  I('2026-10-02T12:45:00+10:00','12:45','沿途小镇午餐','凯马或卧龙岗一带解决，之后一路向北沿海岸线走','Wollongong NSW 2500',-34.4248,150.8931),
+  I('2026-10-02T14:00:00+10:00','14:00','海崖大桥 Sea Cliff Bridge','大太平洋公路最出片的一段，桥架在悬崖与海面之间，路边有停车带','Sea Cliff Bridge, Coalcliff NSW 2508',-34.2462,150.9738),
+  I('2026-10-02T14:40:00+10:00','14:40','秃山观景台 Bald Hill Lookout','俯瞰整条大太平洋公路与海岸线，拍全景的位置','Bald Hill Lookout, Stanwell Tops NSW 2508',-34.2270,150.9780),
+  I('2026-10-02T16:00:00+10:00','16:00','抵达悉尼机场 T3 办登机','国内航站楼，建议起飞前 90 分钟；澳航 QF479','Sydney Airport Terminal 3, Mascot NSW 2020',-33.9366,151.1740),
+  I('2026-10-02T18:15:00+10:00','18:15','QF479 起飞 → 19:50 抵达墨尔本 T1','飞行 1 小时 35 分，起降均为当地时间','Sydney Airport Terminal 3, Mascot NSW 2020',-33.9366,151.1740,'flight'),
+  I('2026-10-02T20:15:00+10:00','20:15','取行李、叫车去南墨尔本','图拉马莱恩机场 → 南墨尔本约 25 分钟','Melbourne Airport, Tullamarine VIC 3043',-37.6695,144.8415),
+  I('2026-10-02T21:00:00+10:00','21:00','入住 88 Park Street, South Melbourne','21:00 到店，入住方式（钥匙箱 / 自助）需提前与房东确认','88 Park St, South Melbourne VIC 3205',-37.8328,144.9638,'stay'),
+  I('2026-10-02T21:30:00+10:00','21:30','Clarendon St 晚餐','南墨尔本主街，餐馆营业到较晚，落地就能吃上热的','Clarendon St, South Melbourne VIC 3205',-37.8330,144.9600)
+  ]),
+ D('2026-10-03','周六','d6','墨尔本','市区漫步 · 拱廊 · 市场 · 涂鸦街','walking',
+  {name:'88 Park Street, South Melbourne（第 5–6 晚）',addr:'88 Park St, South Melbourne VIC 3205',place:'88 Park St, South Melbourne VIC 3205'},
+  [
+  I('2026-10-03T09:00:00+10:00','09:00','弗林德斯街车站 + 联邦广场','南墨尔本坐 96 / 12 路电车约 15 分钟，刷 Myki 卡','Flinders Street Station, Melbourne VIC 3000',-37.8183,144.9670),
+  I('2026-10-03T10:00:00+10:00','10:00','霍西尔巷 Hosier Lane 涂鸦街','就在联邦广场对街，巷子不长，慢慢看壁画','Hosier Lane, Melbourne VIC 3000',-37.8166,144.9690),
+  I('2026-10-03T11:00:00+10:00','11:00','布洛克拱廊 + 皇家拱廊','维多利亚时代拱廊，皇家拱廊的报时钟整点会敲响','Royal Arcade, 335 Bourke St, Melbourne VIC 3000',-37.8147,144.9620),
+  I('2026-10-03T12:30:00+10:00','12:30','维多利亚女王市场 午餐','周一、周三休市；今天周六开市约 06:00–15:00，熟食区现买现吃最热闹','Queen Victoria Market, 513 Elizabeth St, Melbourne VIC 3000',-37.8076,144.9568),
+  I('2026-10-03T14:30:00+10:00','14:30','维多利亚州立图书馆 圆顶阅览室','免费入内，观景层可以俯拍八角形阅览室，保持安静','State Library Victoria, 328 Swanston St, Melbourne VIC 3000',-37.8098,144.9645),
+  I('2026-10-03T16:00:00+10:00','16:00','卡尔顿花园 + 皇家展览馆','图书馆往北步行 10 分钟，草坪很适合歇脚','Royal Exhibition Building, 9 Nicholson St, Carlton VIC 3053',-37.8049,144.9705),
+  I('2026-10-03T18:00:00+10:00','18:00','莱贡街 Lygon St 意大利餐','卡尔顿的意大利街，披萨和意面一路排开','Lygon St, Carlton VIC 3053',-37.8000,144.9670),
+  I('2026-10-03T20:00:00+10:00','20:00','尤里卡观景台 Eureka Skydeck（可选）','南岸最高观景台，俯瞰整城夜景；不想爬高就早点回南墨尔本休息','Eureka Skydeck, 7 Riverside Quay, Southbank VIC 3006',-37.8215,144.9647)
+  ]),
+ D('2026-10-04','周日','d7','大洋路','大洋路南下 · 包车第 1 天 · 夏令时开始','driving',
+  {name:'Wongarra 海滨公寓（第 7 晚）',addr:'5230 Great Ocean Road, Wongarra VIC 3221',place:'5230 Great Ocean Road, Wongarra VIC 3221'},
+  [
+  I('2026-10-04T07:00:00+11:00','07:00','从南墨尔本出发（包车）','今天凌晨 02:00 起进入夏令时，时钟直接跳到 03:00，晚上少睡 1 小时；手机自动切换，不用手动改','88 Park St, South Melbourne VIC 3205',-37.8328,144.9638,'car'),
+  I('2026-10-04T08:30:00+11:00','08:30','吉朗 Geelong 早餐、加满油','离开城市前把油加满，大洋路沿线加油站少且贵','Geelong VIC 3220',-38.1499,144.3617),
+  I('2026-10-04T09:30:00+11:00','09:30','托尔坎 Torquay · 大洋路起点','大洋路的东端起点，从这里正式上路','Torquay VIC 3228',-38.3320,144.3160),
+  I('2026-10-04T10:00:00+11:00','10:00','贝尔斯海滩 Bells Beach','世界级冲浪点，观景台免费，看浪涌和冲浪客','Bells Beach, VIC 3228',-38.3690,144.2830),
+  I('2026-10-04T11:00:00+11:00','11:00','大洋路纪念拱门 Memorial Arch','大洋路上最经典的标志性牌坊，到此一游的打卡点','Great Ocean Road Memorial Arch, Eastern View VIC 3231',-38.4820,143.9400),
+  I('2026-10-04T11:40:00+11:00','11:40','安格尔西 Anglesea · 高尔夫球场野生袋鼠','球场外草坪上常有成群东部灰袋鼠，免费围观，别靠太近','Anglesea Golf Club, Anglesea VIC 3230',-38.4060,144.1880),
+  I('2026-10-04T12:40:00+11:00','12:40','洛恩 Lorne 午餐','大洋路上最热闹的海滨小镇，假期人多，尽量 12:30 前到','Lorne VIC 3232',-38.5400,143.9750),
+  I('2026-10-04T14:00:00+11:00','14:00','怀伊河 / 肯尼特河 找野生考拉','路边桉树上常有野生考拉，慢点开车、轻声靠近，别敲树','Kennett River VIC 3234',-38.6560,143.8600),
+  I('2026-10-04T15:30:00+11:00','15:30','入住 Wongarra 海滨公寓','5230 Great Ocean Road · The Jewel · Whitecrest 海景公寓；门禁与钥匙箱信息请提前问房东','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'stay'),
+  I('2026-10-04T16:30:00+11:00','16:30','公寓阳台看海 / 走到海滩','这一晚的意义就在这里，不用赶路','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'stay'),
+  I('2026-10-04T18:30:00+11:00','18:30','吃晚饭，然后看日落','夏令时后日落约 19:45；沿线餐馆少，建议在洛恩打包或公寓自己做，边吃边等日落','Wongarra VIC 3221',-38.7000,143.7800),
+  I('2026-10-04T20:30:00+11:00','20:30','休息','明早 08:00 出发去十二门徒岩','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'stay')
+  ]),
+ D('2026-10-05','周一','d8','大洋路 → 墨尔本','十二门徒岩 · 包车第 2 天 · 回墨尔本','driving',
+  {name:'38 Rose Lane, Melbourne（第 8–9 晚）',addr:'38 Rose Lane, Melbourne VIC 3000',place:'38 Rose Lane, Melbourne VIC 3000'},
+  [
+  I('2026-10-05T06:30:00+11:00','06:30','公寓看日出（可选）','住在大洋路边，日出就在阳台外','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800),
+  I('2026-10-05T08:00:00+11:00','08:00','出发西行去十二门徒岩','Wongarra → 十二门徒岩约 55 公里、1 小时','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'car'),
+  I('2026-10-05T08:45:00+11:00','08:45','阿波罗湾 Apollo Bay 早餐','小镇咖啡馆集中，也是这一路最后一个像样的补给点','Apollo Bay VIC 3233',-38.7550,143.6700),
+  I('2026-10-05T10:10:00+11:00','10:10','吉布森台阶 Gibson Steps','走下 86 级台阶到海滩，从沙滩仰望两座巨岩','Gibson Steps, Princetown VIC 3269',-38.6690,143.1110),
+  I('2026-10-05T10:45:00+11:00','10:45','十二门徒岩 Twelve Apostles','免费、全天开放；停车场 12:00–17:00 最挤，上午 11 点前到正好错峰','Twelve Apostles, Great Ocean Road, Princetown VIC 3269',-38.6653,143.1047),
+  I('2026-10-05T11:45:00+11:00','11:45','洛克阿德峡谷 Loch Ard Gorge','同一园区，栈道能下到沙滩，人比十二门徒少很多','Loch Ard Gorge, Port Campbell VIC 3269',-38.6480,143.0700),
+  I('2026-10-05T12:40:00+11:00','12:40','坎贝尔港 Port Campbell 午餐','大洋路上的小镇，餐馆不多，假期建议提前订位','Port Campbell VIC 3269',-38.6190,142.9960),
+  I('2026-10-05T14:00:00+11:00','14:00','返程墨尔本（走内陆王子公路）','坎贝尔港 → 墨尔本约 230 公里、3 小时 15 分，内陆比原路折回快得多','Port Campbell VIC 3269',-38.6190,142.9960,'car'),
+  I('2026-10-05T17:30:00+11:00','17:30','入住 38 Rose Lane, 墨尔本 CBD','近南十字车站与 Marvel Stadium，10/7 凌晨去机场方便','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
+  I('2026-10-05T19:00:00+11:00','19:00','晚餐（南岸 Southbank / 唐人街）','南岸河边餐厅多，步行或电车可达','Southbank, Melbourne VIC 3006',-37.8220,144.9640)
+  ]),
+ D('2026-10-06','周二','d9','墨尔本','普芬比利蒸汽火车 + 圣基尔达小企鹅','walking',
+  {name:'38 Rose Lane, Melbourne（第 8–9 晚）',addr:'38 Rose Lane, Melbourne VIC 3000',place:'38 Rose Lane, Melbourne VIC 3000'},
+  [
+  I('2026-10-06T08:20:00+11:00','08:20','从住处走到弗林德斯街站','步行约 15 分钟，市区段在免费电车区内也可坐电车','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470),
+  I('2026-10-06T08:45:00+11:00','08:45','坐 Belgrave 线去贝尔格雷夫','全程约 1 小时 10 分，Myki 卡刷卡；普芬比利车站就在地铁站旁','Flinders Street Station, Melbourne VIC 3000',-37.8183,144.9670),
+  I('2026-10-06T10:00:00+11:00','10:00','普芬比利蒸汽火车','Belgrave ↔ Lakeside 往返，成人 A$66 / 儿童 A$33，全程约 3 小时；可坐在车厢门口把脚伸出去（经典玩法）；必须提前订票','Puffing Billy Railway, 1 Old Monbulk Rd, Belgrave VIC 3160',-37.9080,145.3560,'book',true),
+  I('2026-10-06T13:30:00+11:00','13:30','返回贝尔格雷夫，坐火车回市区','回到市区约 15:00','Belgrave Station, Belgrave VIC 3160',-37.9080,145.3560),
+  I('2026-10-06T15:30:00+11:00','15:30','回 38 Rose Lane 休整','明早 04:15 就要起床，抓紧补个觉','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
+  I('2026-10-06T17:30:00+11:00','17:30','打车 / 电车去圣基尔达 St Kilda','从市区约 20 分钟','St Kilda VIC 3182',-37.8670,144.9760),
+  I('2026-10-06T18:30:00+11:00','18:30','圣基尔达海滩 + Acland St 晚餐','海滨大道散步，Acland St 有犹太糕饼店和意餐','Acland St, St Kilda VIC 3182',-37.8675,144.9790),
+  I('2026-10-06T19:30:00+11:00','19:30','防波堤看野生小蓝企鹅归巢','免费 · 日落前后（10 月初约 19:45）小企鹅从海里上岸回巢；禁闪光、禁喧哗、保持距离。体力吃紧可提前回住处','St Kilda Pier, St Kilda VIC 3182',-37.8640,144.9660),
+  I('2026-10-06T21:00:00+11:00','21:00','返回住处，收拾行李','次日 04:15 起床，建议 22:00 前睡','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay')
+  ]),
+ D('2026-10-07','周三','d10','墨尔本 → 香港','返程回国','transit',
+  {name:'返程',addr:'Melbourne Airport Terminal 2, Tullamarine VIC 3043',place:'Melbourne Airport Terminal 2, Tullamarine VIC 3043'},
+  [
+  I('2026-10-07T04:15:00+11:00','04:15','起床、退房','提前一晚确认自助退房方式（钥匙箱 / 前台），别在凌晨卡住','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
+  I('2026-10-07T04:30:00+11:00','04:30','用 Uber / 滴滴 叫车去墨尔本机场 T2','现场叫 7 座 XL，CBD → 机场约 25–30 分钟。凌晨在线车少、等待时间可能偏长，建议 04:20 就打开 App 开始叫，同时留出备用方案','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'car'),
+  I('2026-10-07T05:00:00+11:00','05:00','抵达 T2，办登机 + TRS 退税','国际航班建议起飞前 3 小时到；TRS 柜台在出发层，同一商家满 A$300 可退，需带商品与小票','Melbourne Airport Terminal 2, Tullamarine VIC 3043',-37.6690,144.8450),
+  I('2026-10-07T08:25:00+11:00','08:25','国泰 CX134 起飞','空客 A350-900 · 飞行 9 小时 30 分 · 墨尔本时间','Melbourne Airport Terminal 2, Tullamarine VIC 3043',-37.6690,144.8450,'flight'),
+  I('2026-10-07T14:55:00+08:00','14:55','抵达香港国际机场 T1','中国香港时间 14:55，行程结束','Hong Kong International Airport Terminal 1',null,null,'flight')
+  ])
+],
+todos:[
+ '订 10/1–10/2 悉尼 ↔ 卡拉拉海湾（Callala Bay）往返包车 · 7 座带司机 · 2 天',
+ '订 10/4–10/5 大洋路包车 · 7 座带司机 · 2 天（墨尔本出发，Wongarra 住宿已在手）',
+ '订 9/29 悉尼歌剧院 1 小时中文导览（场次集中在 09:00–17:00，中文场次少，先订）',
+ '订 9/30 蓝山景观世界 Scenic World 门票（Discovery Pass，含缆车 / 索道 / 观光火车）',
+ '订 10/6 普芬比利蒸汽火车票（Belgrave ↔ Lakeside 往返，成人 A$66 / 儿童 A$33，必须提前预订）',
+ '把 9/28 接机预约时间从 06:50 调到 07:10–07:15（国际航班入境取行李通常要 45–75 分钟）',
+ '与 88 Park Street 房东确认 10/2 晚 21:00 左右到店的入住方式',
+ '与卡拉拉海湾房东 Nicole 确认 10/2 能否 08:15 提前退房（或 10:00 前返回办退房）',
+ '与 Wongarra 公寓房东确认门禁与钥匙箱信息（位置偏、无前台，当晚才问会麻烦）',
+ '与 38 Rose Lane 确认 10/7 凌晨 04:15 的退房方式（自助退房 / 前台下钥匙箱）',
+ '10/7 凌晨 04:20 打开 Uber / 滴滴 叫 7 座 XL（凌晨在线车少，预留等待时间）',
+ '出发前 72 小时在线值机（国泰 CX111、澳航 QF479、国泰 CX134），给 5 人预选座位'
+]
+};
+/* 10/7 落地香港那一条用中国香港时区显示（其余当天条目用墨尔本时间） */
+DEFAULTS.days[9].items[4].tz='Asia/Hong_Kong';
+/* 出发航班落在 9/27 晚上，单独作为第 1 天的首条，让倒计时锚定真正的起飞时刻 */
+DEFAULTS.days[0].items.unshift({at:'2026-09-27T19:05:00+08:00',time:'19:05',tz:'Asia/Hong_Kong',
+  name:'9月27日 周日 · 香港国际机场 T1 出发 · 国泰 CX111',
+  note:'前一天晚上 19:05 起飞（中国香港时间 UTC+8），飞行 9 小时 5 分，跨夜飞行，次日 06:10 落地悉尼。国际航班建议提前 3 小时到机场。',
+  place:'Hong Kong International Airport Terminal 1',lat:null,lng:null,tag:'flight'});
+
+var ORDERS=[ {g:'✈ 已出票 · 航班',items:[
+  {t:'CX111 · 香港 → 悉尼',tm:'9/27 周日 19:05 → 9/28 周一 06:10',
+   tz:'19:05 中国香港时间（UTC+8）· 06:10 悉尼时间（UTC+10）',
+   sub:'空客 A350-900 · 飞行 9 小时 5 分 · 订单注明起降均为当地时间 · 5 人',
+   addr:'香港国际机场 T1 → 悉尼金斯福德·史密斯机场 T1',map:'Sydney Airport Terminal 1 International, Mascot NSW 2020',pill:'已出票',cls:'ok'},
+  {t:'QF479 · 悉尼 → 墨尔本',tm:'10/2 周五 18:15 → 19:50',
+   tz:'18:15 悉尼 T3（UTC+10）· 19:50 墨尔本 T1（UTC+10）· 10/2 尚未进入夏令时',
+   sub:'澳洲航空 · 飞行 1 小时 35 分 · 悉尼 T3 为国内航站楼，建议起飞前 90 分钟到',
+   addr:'悉尼金斯福德·史密斯机场 T3 → 墨尔本图拉马莱恩机场 T1',map:'Sydney Airport Terminal 3 Domestic, Mascot NSW 2020',pill:'已出票',cls:'ok'},
+  {t:'CX134 · 墨尔本 → 香港',tm:'10/7 周三 08:25 → 14:55',
+   tz:'08:25 墨尔本时间（UTC+11，已含夏令时）· 14:55 中国香港时间（UTC+8）',
+   sub:'空客 A350-900 · 飞行 9 小时 30 分 · 国际航班建议 05:00 前到 T2',
+   addr:'墨尔本图拉马莱恩机场 T2 → 香港国际机场 T1',map:'Melbourne Airport Terminal 2, Tullamarine VIC 3043',pill:'已出票',cls:'ok'}
+ ]},
+ {g:'🚐 已订 · 用车',items:[
+  {t:'悉尼机场接机（9/28）',tm:'9/28 周一 06:50 上车',
+   tz:'悉尼时间（UTC+10）',
+   sub:'7 座 · 13 公里 / 约 20 分钟 · 含 60 分钟免费等待 · 服务商「远山旅游」· 费用已付',
+   addr:'悉尼金斯福德·史密斯机场 T1 → 339 Sussex St, Sydney NSW 2000',map:'339 Sussex St, Sydney NSW 2000',pill:'时间偏紧，见待办',cls:'warn'}
+ ]},
+ {g:'🏨 已订 · 住宿（共 9 晚）',items:[
+  {t:'悉尼 · 339 Sussex Street',tm:'9/28 15:00 → 10/1 10:00（3 晚）',tz:'悉尼时间（UTC+10）',
+   sub:'房东 Milan · 第 1–3 晚',addr:'339 Sussex St, Sydney NSW 2000',map:'339 Sussex St, Sydney NSW 2000',pill:'已订',cls:'ok'},
+  {t:'杰维斯湾 · 卡拉拉海湾 40 Tidy Close',tm:'10/1 15:00 → 10/2 10:00（1 晚）',tz:'悉尼时间（UTC+10）',
+   sub:'房东 Nicole · 第 4 晚 · 需包车前往，无公共交通',addr:'40 Tidy Close, Callala Bay NSW 2540',map:'40 Tidy Close, Callala Bay NSW 2540',pill:'已订',cls:'ok'},
+  {t:'墨尔本 · 88 Park Street, South Melbourne',tm:'10/2 → 10/4（2 晚）',tz:'墨尔本时间（10/2–10/3 为 UTC+10，10/4 起 UTC+11）',
+   sub:'第 5–6 晚 · 10/2 约 21:00 到店，入住方式待与房东确认',addr:'88 Park St, South Melbourne VIC 3205',map:'88 Park St, South Melbourne VIC 3205',pill:'已订',cls:'ok'},
+  {t:'大洋路 · Wongarra 海滨公寓',tm:'10/4 → 10/5（1 晚）',tz:'墨尔本时间（UTC+11，夏令时首日）',
+   sub:'The Jewel · Whitecrest 海景公寓 · 第 7 晚 · 门禁与钥匙箱信息请提前问房东',addr:'5230 Great Ocean Road, Wongarra VIC 3221',map:'5230 Great Ocean Road, Wongarra VIC 3221',pill:'已订',cls:'ok'},
+  {t:'墨尔本 · 38 Rose Lane',tm:'10/5 → 10/7（2 晚）',tz:'墨尔本时间（UTC+11）',
+   sub:'第 8–9 晚 · 近南十字车站，10/7 凌晨去机场方便',addr:'38 Rose Lane, Melbourne VIC 3000',map:'38 Rose Lane, Melbourne VIC 3000',pill:'已订',cls:'ok'}
+ ]},
+ {g:'🎫 门票 / 一日游',items:[
+  {t:'尚未有已确认的门票订单',tm:'—',tz:'',sub:'需要提前订票的项目已列在「待办清单」里：歌剧院中文导览（9/29）、蓝山景观世界（9/30）、普芬比利蒸汽火车（10/6）',addr:'订好后把凭证发我，我补进这一栏',map:null,pill:'待补',cls:'warn'}
+ ]},
+ {g:'📞 服务方电话（公开号码）',items:[
+  {t:'国泰航空',tm:'中国内地 400 815 2888 · 中国香港 +852 2747 3333',tz:'24 小时客服',
+   sub:'WhatsApp 查询（中国香港号码）：+852 2747 2747',addr:'https://www.cathaypacific.com',map:null},
+  {t:'澳洲航空 Qantas',tm:'澳洲境内 13 13 13 · 中国香港 +852 2298 8111 · 中国内地 +86 400 819 9495',tz:'24 小时客服',sub:'QF479 属于国内段航班，改签请走澳航渠道',addr:'https://www.qantas.com',map:null},
+  {t:'紧急求助（澳洲）',tm:'000',tz:'警察 / 救护 / 消防统一号码',sub:'手机可直接拨打，接线员会问地点与需要哪种服务',addr:'Australia Emergency 000',map:null}
+ ]}
+];
+
+/* ========== 状态 ========== */
+var KEY='sydmel_trip_v1';
+var STATE=null;
+function loadState(){
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw){
+      var s=JSON.parse(raw);
+      if(s&&s.days&&s.todos) return s;
+    }
+  }catch(e){}
+  return JSON.parse(JSON.stringify(DEFAULTS));
+}
+function saveState(){try{localStorage.setItem(KEY,JSON.stringify(STATE))}catch(e){}}
+function dayTz(d){return DAY_HOME[d.color]||'Australia/Sydney'}
+
+/* ========== ① 此刻关注 ========== */
+function allEvents(){
+  var out=[];
+  STATE.days.forEach(function(d,di){
+    d.items.forEach(function(it,ii){ if(it.at) out.push({it:it,di:di,ii:ii,tz:dayTz(d),day:d}) });
+  });
+  out.sort(function(a,b){return new Date(a.it.at)-new Date(b.it.at)});
+  return out;
+}
+function tick(){
+  var ev=allEvents(),now=Date.now(),next=null,last=null;
+  for(var i=0;i<ev.length;i++){
+    if(new Date(ev[i].it.at).getTime()>now){ if(!next) next=ev[i]; }
+    else last=ev[i];
+  }
+  var nameEl=document.getElementById('nowName'),whenEl=document.getElementById('nowWhen');
+  if(!next){
+    nameEl.textContent='行程已结束 · 一路平安';
+    whenEl.innerHTML='感谢这 10 天，下次再见。';
+    ['cdD','cdH','cdM','cdS'].forEach(function(id){document.getElementById(id).textContent='--'});
+  }else{
+    var tz=next.it.tz||next.tz,d=new Date(next.it.at);
+    var label=(next===ev[0]&&!last)?'距离出发':'距离下一站';
+    nameEl.textContent=next.it.name;
+    whenEl.innerHTML=label+' · <b>'+fmt(next.it.at,tz,{month:'long',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit'})+
+      '</b>（'+tzCN(tz)+'时间 '+offLabel(tz,d)+'）'+
+      (next.it.place?' · <a href="'+maps(next.it.place)+'" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px dotted var(--ink3);text-decoration:none">在地图查看</a>':'');
+    var diff=Math.max(0,new Date(next.it.at).getTime()-now);
+    var dd=Math.floor(diff/86400000),hh=Math.floor(diff%86400000/3600000),
+        mm=Math.floor(diff%3600000/60000),ss=Math.floor(diff%60000/1000);
+    document.getElementById('cdD').textContent=dd;
+    document.getElementById('cdH').textContent=pad(hh);
+    document.getElementById('cdM').textContent=pad(mm);
+    document.getElementById('cdS').textContent=pad(ss);
+  }
+  // 时钟
+  var nowD=new Date();
+  var s1=offLabel('Australia/Sydney',nowD),s2=offLabel('Australia/Melbourne',nowD);
+  document.getElementById('clocks').innerHTML=
+    '<span>现在悉尼 <b>'+fmt(nowD,'Australia/Sydney',{hour:'2-digit',minute:'2-digit'})+'</b> '+s1+'</span>'+
+    '<span>现在墨尔本 <b>'+fmt(nowD,'Australia/Melbourne',{hour:'2-digit',minute:'2-digit'})+'</b> '+s2+'</span>'+
+    '<span>你的时间 <b>'+fmt(nowD,Intl.DateTimeFormat().resolvedOptions().timeZone,{hour:'2-digit',minute:'2-digit'})+'</b> '+offLabel(Intl.DateTimeFormat().resolvedOptions().timeZone,nowD)+'</span>';
+}
+
+/* ========== ② 图例 ========== */
+function renderLegend(){
+  var box=document.getElementById('legend');box.innerHTML='';
+  STATE.days.forEach(function(d,i){
+    var a=document.createElement('a');
+    a.className='chip';a.href='#day-'+i;a.setAttribute('style','--c:var(--'+(d.color)+')');
+    var dot=document.createElement('i');a.appendChild(dot);
+    a.appendChild(document.createTextNode(d.date.slice(5).replace('-','/')+' '+d.city));
+    box.appendChild(a);
+  });
+}
+
+/* ========== ③ 订单 ========== */
+function renderOrders(){
+  var box=document.getElementById('ordersBox');box.innerHTML='';
+  ORDERS.forEach(function(g){
+    var gd=document.createElement('div');gd.className='ogroup';
+    var h=document.createElement('h3');h.textContent=g.g;gd.appendChild(h);
+    g.items.forEach(function(o){
+      var d=document.createElement('div');d.className='oitem';
+      var html='<p class="t">';
+      if(o.pill) html+='<span class="pill '+(o.cls||'')+'">'+esc(o.pill)+'</span>';
+      html+=esc(o.t)+'</p><p class="tm">'+esc(o.tm)+'</p>';
+      if(o.tz) html+='<p class="tz">'+esc(o.tz)+'</p>';
+      if(o.sub) html+='<p class="sub">'+esc(o.sub)+'</p>';
+      if(o.addr){
+        var addr=/^https?:/.test(o.addr)?'<a href="'+esc(o.addr)+'" target="_blank" rel="noopener">'+esc(o.addr)+'</a>'
+          :(o.map?'<a href="'+maps(o.map)+'" target="_blank" rel="noopener">'+esc(o.addr)+'</a>':esc(o.addr));
+        html+='<p class="addr">'+addr+'</p>';
+      }
+      d.innerHTML=html;gd.appendChild(d);
+    });
+    box.appendChild(gd);
+  });
+}
+
+/* ========== ④ 逐日行程 ========== */
+function dayNavUrl(d){
+  var pts=d.items.filter(function(i){return i.place&&i.lat!=null}).map(function(i){return i.place});
+  var uniq=[];pts.forEach(function(p){if(uniq.indexOf(p)<0) uniq.push(p)});
+  if(uniq.length<2) return null;
+  var q=function(s){return encodeURIComponent(s)};
+  var url='https://www.google.com/maps/dir/?api=1&origin='+q(uniq[0])+'&destination='+q(uniq[uniq.length-1]);
+  var mid=uniq.slice(1,-1).slice(0,9);
+  if(mid.length) url+='&waypoints='+mid.map(q).join('%7C');
+  return url+'&travelmode='+(d.mode||'driving');
+}
+function miniMap(d){
+  var pts=d.items.filter(function(i){return i.lat!=null&&i.lng!=null});
+  var u=pts.filter(function(p,i){return !i||Math.abs(p.lat-pts[i-1].lat)>1e-5||Math.abs(p.lng-pts[i-1].lng)>1e-5});
+  if(u.length<2) return '<div style="font-size:12.5px;color:var(--ink3);padding:10px 4px">这一天的地点集中在一处，不需要跨点导航。</div>';
+  var W=340,H=170,P=30;
+  var lats=u.map(function(p){return p.lat}),lngs=u.map(function(p){return p.lng});
+  var minLat=Math.min.apply(null,lats),maxLat=Math.max.apply(null,lats),
+      minLng=Math.min.apply(null,lngs),maxLng=Math.max.apply(null,lngs);
+  var kx=Math.cos((minLat+maxLat)/2*Math.PI/180);
+  var spanX=Math.max((maxLng-minLng)*kx,0.02),spanY=Math.max(maxLat-minLat,0.02);
+  var sc=Math.min((W-2*P)/spanX,(H-2*P)/spanY);
+  var ox=(W-spanX*sc)/2,oy=(H-spanY*sc)/2;
+  function X(lng){return (lng-minLng)*kx*sc+ox}
+  function Y(lat){return (maxLat-lat)*sc+oy}
+  var line=u.map(function(p){return X(p.lng).toFixed(1)+','+Y(p.lat).toFixed(1)}).join(' ');
+  var s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto">';
+  s+='<rect x="0" y="0" width="'+W+'" height="'+H+'" rx="10" style="fill:var(--paper)"/>';
+  s+='<polyline points="'+line+'" style="fill:none;stroke:var(--c);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.8;stroke-dasharray:6 5"/>';
+  u.forEach(function(p,i){
+    var x=X(p.lng),y=Y(p.lat);
+    s+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="8.5" style="fill:var(--c)"/>';
+    s+='<text x="'+x.toFixed(1)+'" y="'+(y+3.4).toFixed(1)+'" text-anchor="middle" style="font-size:9.5px;fill:#fff;font-family:var(--sans);font-weight:600">'+(i+1)+'</text>';
+  });
+  s+='<text x="8" y="'+(H-8)+'" style="font-size:9.5px;fill:var(--ink3);font-family:var(--sans)">示意，非等比例</text>';
+  s+='</svg>';
+  return s;
+}
+function renderDays(){
+  var box=document.getElementById('daysBox');box.innerHTML='';
+  STATE.days.forEach(function(d,di){
+    var tz=dayTz(d);
+    var ref=null;for(var k=0;k<d.items.length;k++){if(d.items[k].at){ref=d.items[k].at;break}}
+    var offs=ref?offLabel(tz,new Date(ref)):'';
+    var el=document.createElement('article');
+    el.className='day '+(d.color||'d1');el.id='day-'+di;
+    var head='<div class="day-head"><span class="dot"></span><div class="h">'+
+      '<p class="d">第 '+(di+1)+' 天 · '+d.date.replace(/-/g,'/')+' '+esc(d.wd)+(offs?' · '+tzCN(tz)+'时间 '+offs:'')+'</p>'+
+      '<p class="t">'+esc(d.title)+'</p>'+
+      '<p class="m">'+esc(d.city)+'</p></div>'+
+      '<button class="rt" data-rt="'+di+'">当日路线</button></div>';
+    var body='<div class="day-body">';
+    d.items.forEach(function(it,ii){
+      var itz=it.tz||tz;
+      var timeTxt=it.at?fmt(it.at,itz,{hour:'2-digit',minute:'2-digit'}):(it.time||'—');
+      var hasT=!!(it.at||it.time);
+      body+='<div class="it'+(it.tag==='flight'?' fly':'')+'">'+
+        '<div class="tt'+(hasT?' has':'')+'">'+esc(timeTxt)+'</div><div class="mn">'+
+        '<p class="nm">'+(it.place?'<a href="'+maps(it.place)+'" target="_blank" rel="noopener">'+esc(it.name)+'</a>':esc(it.name))+
+        (it.book?'<span class="bk">需提前订票</span>':'')+'</p>'+
+        (it.note?'<p class="nt">'+esc(it.note)+'</p>':'')+
+        '<div class="it-ops"><button class="btn-s" data-ei="'+di+'-'+ii+'">编辑</button>'+
+        '<button class="btn-s" data-mi="'+di+'-'+ii+'">上移</button>'+
+        '<button class="btn-s" data-mid="'+di+'-'+ii+'">下移</button>'+
+        '<button class="btn-s danger" data-di="'+di+'-'+ii+'">删除</button></div>'+
+        '</div></div>';
+    });
+    if(d.stay&&d.stay.name){
+      body+='<p class="day-stay">🛏 今晚住：<b>'+esc(d.stay.name)+'</b>'+
+        (d.stay.addr?' · <a href="'+maps(d.stay.place||d.stay.addr)+'" target="_blank" rel="noopener">'+esc(d.stay.addr)+'</a>':'')+'</p>';
+    }
+    body+='<div class="day-edit"><button class="btn-s" data-addi="'+di+'">＋ 添加行程</button>'+
+      '<button class="btn-s" data-editday="'+di+'">编辑整天</button>'+
+      '<button class="btn-s danger" data-delday="'+di+'">删除整天</button></div>';
+    body+='</div>';
+    var route='<div class="route-panel" id="rp-'+di+'"></div>';
+    el.innerHTML=head+body+route;
+    box.appendChild(el);
+  });
+  // 同步展开状态
+  box.querySelectorAll('[data-rt]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.getAttribute('data-rt'),p=document.getElementById('rp-'+i);
+      if(p.classList.contains('on')){p.classList.remove('on');b.textContent='当日路线';return}
+      if(!p.dataset.done){
+        var d=STATE.days[i];
+        var url=dayNavUrl(d);
+        var html=miniMap(d)+'<div class="stops">';
+        var n=0,lastQ=null;
+        d.items.forEach(function(it){
+          if(!it.place||it.lat==null||it.place===lastQ) return;
+          lastQ=it.place;n++;
+          html+='<a class="stop" href="'+maps(it.place)+'" target="_blank" rel="noopener"><b>'+n+'</b>'+esc(it.name.split('·')[0].trim())+'</a>';
+        });
+        html+='</div>';
+        html+=url?'<a class="navbtn" href="'+url+'" target="_blank" rel="noopener">▶ 全天多点导航（Google 地图）</a>'
+          :'<span style="font-size:12.5px;color:var(--ink3)">当天地点集中，无需多点导航</span>';
+        p.innerHTML=html;p.dataset.done='1';
+      }
+      p.classList.add('on');b.textContent='收起路线';
+    });
+  });
+}
+
+/* ========== ⑤ 待办 ========== */
+function renderTodos(){
+  var box=document.getElementById('todoBox');box.innerHTML='';
+  STATE.todos.forEach(function(t,i){
+    var li=document.createElement('li');
+    li.innerHTML=esc(t)+'<div class="i-ops"><button class="btn-s" data-et="'+i+'">编辑</button>'+
+      '<button class="btn-s" data-dt="'+i+'">已办 / 删除</button></div>';
+    box.appendChild(li);
+  });
+}
+
+/* ========== 弹窗 ========== */
+var mCtx=null;
+function openModal(title,fields,onSave){
+  document.getElementById('mTitle').textContent=title;
+  var box=document.getElementById('mFields');box.innerHTML='';
+  fields.forEach(function(f){
+    var l=document.createElement('label');
+    if(f.type==='check'){
+      l.className='ck';
+      l.innerHTML='<input type="checkbox" id="f_'+f.key+'"'+(f.value?' checked':'')+'> '+esc(f.label);
+    }else if(f.type==='area'){
+      l.textContent=f.label;
+      l.innerHTML+='<textarea id="f_'+f.key+'">'+esc(f.value||'')+'</textarea>';
+    }else if(f.type==='select'){
+      l.textContent=f.label;
+      var op=(f.options||[]).map(function(o){return '<option value="'+esc(o.v)+'"'+(String(o.v)===String(f.value)?' selected':'')+'>'+esc(o.l)+'</option>'}).join('');
+      l.innerHTML+='<select id="f_'+f.key+'">'+op+'</select>';
+    }else{
+      l.textContent=f.label;
+      l.innerHTML+='<input type="text" id="f_'+f.key+'" value="'+esc(f.value||'')+'">';
+    }
+    box.appendChild(l);
+  });
+  mCtx={fields:fields,onSave:onSave};
+  document.getElementById('modal').hidden=false;
+}
+function closeModal(){document.getElementById('modal').hidden=true;mCtx=null}
+function readModal(){
+  var v={};
+  mCtx.fields.forEach(function(f){
+    var el=document.getElementById('f_'+f.key);
+    v[f.key]=f.type==='check'?el.checked:el.value;
+  });
+  return v;
+}
+
+/* ========== 编辑操作 ========== */
+function itemFields(it){
+  return [
+    {key:'time',label:'时间（24 小时制 HH:MM，留空表示无固定时间）',value:it.time||''},
+    {key:'name',label:'行程名称',value:it.name||''},
+    {key:'note',label:'备注',type:'area',value:it.note||''},
+    {key:'place',label:'地点（用于 Google 地图搜索，留空则不可点击）',value:it.place||''},
+    {key:'book',label:'需要提前订票',type:'check',value:it.book}
+  ];
+}
+function editItem(di,ii){
+  var d=STATE.days[di],it=d.items[ii];
+  openModal('编辑行程',itemFields(it),function(v){
+    it.time=v.time.trim();it.name=v.name.trim();it.note=v.note.trim();
+    it.place=v.place.trim()||null;it.book=!!v.book;
+    if(it.time&&/^\d{1,2}:\d{2}$/.test(it.time)){
+      var t=it.time.split(':');it.time=pad(+t[0])+':'+t[1];
+      it.at=localToInstant(d.date,it.time,dayTz(d));
+    }else{it.at=null}
+    saveState();renderDays();tick();
+  });
+}
+function addItem(di){
+  var d=STATE.days[di];
+  openModal('添加行程 · '+d.date.replace(/-/g,'/'),itemFields({}),function(v){
+    var time=v.time.trim();
+    if(time&&/^\d{1,2}:\d{2}$/.test(time)){var t=time.split(':');time=pad(+t[0])+':'+t[1]}
+    var it={time:time,name:v.name.trim(),note:v.note.trim(),place:v.place.trim()||null,
+      at:time?localToInstant(d.date,time,dayTz(d)):null,book:!!v.book,tag:null,lat:null,lng:null};
+    if(d.stay&&d.stay.place) it.place=it.place||null;
+    d.items.push(it);
+    d.items.sort(function(a,b){
+      if(!a.at&&!b.at) return 0;
+      if(!a.at) return 1; if(!b.at) return -1;
+      return new Date(a.at)-new Date(b.at);
+    });
+    saveState();renderDays();tick();
+  });
+}
+function editDay(di){
+  var d=STATE.days[di];
+  openModal('编辑整天',[
+    {key:'title',label:'当天主题',value:d.title||''},
+    {key:'date',label:'日期（YYYY-MM-DD）',value:d.date},
+    {key:'city',label:'城市标签',value:d.city||''},
+    {key:'stay',label:'当晚住宿名称（留空表示无）',value:(d.stay&&d.stay.name)||''},
+    {key:'stayAddr',label:'住宿地址',value:(d.stay&&d.stay.addr)||''}
+  ],function(v){
+    d.title=v.title.trim();d.city=v.city.trim();
+    if(/^\d{4}-\d{2}-\d{2}$/.test(v.date.trim())){
+      d.date=v.date.trim();
+      var wd=new Date(d.date+'T12:00:00+10:00').getDay();
+      d.wd=WD[wd];
+    }
+    if(v.stay.trim()) d.stay={name:v.stay.trim(),addr:v.stayAddr.trim(),place:v.stayAddr.trim()};
+    else d.stay=null;
+    saveState();renderDays();renderLegend();tick();
+  });
+}
+function editTodo(i){
+  openModal('编辑待办',[{key:'t',label:'内容',type:'area',value:STATE.todos[i]}],function(v){
+    STATE.todos[i]=v.t.trim();saveState();renderTodos();
+  });
+}
+function addTodo(){
+  openModal('添加待办',[{key:'t',label:'内容',type:'area',value:''}],function(v){
+    if(!v.t.trim()) return;
+    STATE.todos.push(v.t.trim());saveState();renderTodos();
+  });
+}
+
+/* ========== 事件绑定 ========== */
+document.addEventListener('click',function(e){
+  var t=e.target;
+  if(!t||!t.tagName) return;
+  if(t.tagName==='BUTTON'&&t.hasAttribute('data-rt')) return;
+  if(t.tagName==='BUTTON'){
+    var v;
+    if(t.hasAttribute('data-ei')){v=t.getAttribute('data-ei').split('-');editItem(+v[0],+v[1])}
+    else if(t.hasAttribute('data-addi')){addItem(+t.getAttribute('data-addi'))}
+    else if(t.hasAttribute('data-editday')){editDay(+t.getAttribute('data-editday'))}
+    else if(t.hasAttribute('data-delday')){
+      var i=+t.getAttribute('data-delday');
+      if(confirm('删除「'+STATE.days[i].title+'」整天的行程？')){STATE.days.splice(i,1);saveState();renderDays();renderLegend();tick()}
+    }
+    else if(t.hasAttribute('data-di')){
+      v=t.getAttribute('data-di').split('-');
+      var d=STATE.days[+v[0]];
+      if(confirm('删除这条行程？')){d.items.splice(+v[1],1);saveState();renderDays();tick()}
+    }
+    else if(t.hasAttribute('data-mi')){
+      v=t.getAttribute('data-mi').split('-');var arr=STATE.days[+v[0]].items,k=+v[1];
+      if(k>0){var tmp=arr[k];arr[k]=arr[k-1];arr[k-1]=tmp;saveState();renderDays()}
+    }
+    else if(t.hasAttribute('data-mid')){
+      v=t.getAttribute('data-mid').split('-');var arr2=STATE.days[+v[0]].items,k2=+v[1];
+      if(k2<arr2.length-1){var tmp2=arr2[k2];arr2[k2]=arr2[k2+1];arr2[k2+1]=tmp2;saveState();renderDays()}
+    }
+    else if(t.hasAttribute('data-et')){editTodo(+t.getAttribute('data-et'))}
+    else if(t.hasAttribute('data-dt')){
+      var j=+t.getAttribute('data-dt');
+      if(confirm('标记为已办并移除？')){STATE.todos.splice(j,1);saveState();renderTodos()}
+    }
+  }
+});
+document.getElementById('editTab').addEventListener('click',function(){
+  document.body.classList.toggle('editing');
+  this.classList.toggle('on');
+});
+document.getElementById('resetTrip').addEventListener('click',function(){
+  if(confirm('恢复为原始行程？你在本机做的修改会全部丢失。')){
+    STATE=JSON.parse(JSON.stringify(DEFAULTS));saveState();
+    renderAll();
+  }
+});
+document.getElementById('addTodo').addEventListener('click',addTodo);
+document.getElementById('mCancel').addEventListener('click',closeModal);
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this) closeModal()});
+document.getElementById('mOk').addEventListener('click',function(){
+  if(!mCtx) return;
+  var v=readModal(),fn=mCtx.onSave;closeModal();fn(v);
+});
+
+/* ========== 启动 ========== */
+function renderAll(){renderLegend();renderOrders();renderDays();renderTodos();tick()}
+STATE=loadState();
+renderAll();
+setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
