@@ -16,7 +16,9 @@
   --shadow-lg:0 2px 4px rgba(36,31,26,.05),0 12px 32px -10px rgba(140,120,90,.26);
   --d1:#D2703F;--d2:#C0912E;--d3:#6E9463;--d4:#3F7FA8;--d5:#7E62A8;
   --d6:#B95C50;--d7:#2F9384;--d8:#2A6E6B;--d9:#A8703A;--d10:#8A857C;
+  --stick:96px; /* 吸顶菜单栏高度 + 余量，锚点落位时留出，避免标题被压在栏下 */
 }
+body.editing{--stick:126px} /* 编辑模式多一条提示横幅 */
 @media (prefers-color-scheme:dark){:root{
   --bg:#17140F;--paper:#211D18;--paper2:#2B251E;--ink:#EDE7DD;--ink2:#B0A695;--ink3:#7C7365;
   --line:#3A342B;--accent:#F0805F;--accent-soft:#3D2620;--teal:#5BC0B4;--teal-soft:#1E332F;
@@ -39,7 +41,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.01em}
 .stats .st{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 6px 9px;text-align:center;box-shadow:var(--shadow)}
 .stats .st b{display:block;font-family:var(--serif);font-size:21px;line-height:1.15;font-weight:600}
 .stats .st span{font-size:10.5px;color:var(--ink3);letter-spacing:.1em}
-section{margin-top:30px;scroll-margin-top:108px}
+section{margin-top:30px;scroll-margin-top:var(--stick)}
 
 /* ===== 顶部菜单栏 ===== */
 .navbar{position:sticky;top:0;z-index:40;margin:0 -16px 0;background:var(--paper);border-bottom:1px solid var(--line)}
@@ -114,7 +116,7 @@ body.editing .ebanner{display:block}
 .d1{--c:var(--d1)}.d2{--c:var(--d2)}.d3{--c:var(--d3)}.d4{--c:var(--d4)}.d5{--c:var(--d5)}
 .d6{--c:var(--d6)}.d7{--c:var(--d7)}.d8{--c:var(--d8)}.d9{--c:var(--d9)}.d10{--c:var(--d10)}
 .day{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);
-  border-radius:18px;margin-bottom:14px;overflow:hidden;scroll-margin-top:12px}
+  border-radius:18px;margin-bottom:14px;overflow:hidden;scroll-margin-top:var(--stick)}
 .day-head{display:flex;align-items:flex-start;gap:11px;padding:13px 16px;border-bottom:1px solid var(--line);
   background:var(--paper2)}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 auto;margin-top:7px;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 20%,transparent)}
@@ -136,6 +138,10 @@ body.editing .ebanner{display:block}
 .it .nm a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .it .nt{font-size:11.5px;color:var(--ink2);margin:0}
 .it .bk{font-size:10px;color:var(--accent);background:var(--accent-soft);border:none;border-radius:999px;padding:1px 8px;white-space:nowrap;font-weight:500}
+.it .ph{margin:8px 0 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--paper2);
+  line-height:0;max-width:470px}
+.it .ph img{display:block;width:100%;height:150px;object-fit:cover}
+@media (min-width:560px){.it .ph{max-width:540px}.it .ph img{height:195px}}
 .it.fly{background:linear-gradient(90deg,color-mix(in srgb,var(--c) 7%,transparent),transparent)}
 .it.fly .nm::before{content:"✈";margin-right:3px;color:var(--c)}
 .it-ops{display:none;gap:6px;margin-top:7px;flex-wrap:wrap}
@@ -286,32 +292,32 @@ body.editing .editbar{display:flex}
         <g style="fill:none;stroke-linecap:round;stroke-linejoin:round">
           <path d="M392,228 C 372,206 348,178 330,150" style="stroke:var(--d1);stroke-width:2.4"/>
           <path d="M330,150 C 306,176 288,194 274,206" style="stroke:var(--d2);stroke-width:2.4"/>
-          <path d="M330,150 C 258,150 180,168 120,196" style="stroke:var(--d3);stroke-width:2.4;stroke-dasharray:7 6"/>
-          <path d="M274,206 C 292,252 306,288 322,316" style="stroke:var(--d4);stroke-width:2.4"/>
+          <path d="M330,150 C 352,154 376,162 396,172" style="stroke:var(--d3);stroke-width:2.4;stroke-dasharray:7 6"/>
+          <path d="M274,206 C 302,230 356,250 392,270" style="stroke:var(--d4);stroke-width:2.4"/>
+          <path d="M392,270 C 366,296 344,308 322,316" style="stroke:var(--d4);stroke-width:2.4"/>
           <path d="M322,316 C 304,338 278,350 250,362" style="stroke:var(--d4);stroke-width:2.4"/>
-          <path d="M250,362 C 226,384 210,396 196,404" style="stroke:var(--d5);stroke-width:2.4"/>
-          <path d="M196,404 C 250,442 352,420 400,336" style="stroke:var(--d5);stroke-width:2.4"/>
-          <path d="M400,336 C 430,300 424,258 392,228" style="stroke:var(--d5);stroke-width:2.4"/>
+          <path d="M250,362 C 226,384 210,396 196,404" style="stroke:var(--d4);stroke-width:2.4"/>
+          <path d="M250,362 C 300,318 350,266 392,228" style="stroke:var(--d5);stroke-width:2.4"/>
         </g>
         <g style="stroke-width:2.6">
-          <circle cx="120" cy="196" r="6.5" style="fill:var(--paper);stroke:var(--d3)"/>
+          <circle cx="396" cy="172" r="6.5" style="fill:var(--paper);stroke:var(--d3)"/>
           <circle cx="330" cy="150" r="7.5" style="fill:var(--paper);stroke:var(--d1)"/>
           <circle cx="392" cy="228" r="6" style="fill:var(--paper);stroke:var(--d1)"/>
           <circle cx="322" cy="316" r="6" style="fill:var(--paper);stroke:var(--d4)"/>
-          <circle cx="400" cy="336" r="6" style="fill:var(--paper);stroke:var(--d5)"/>
-          <circle cx="196" cy="404" r="6" style="fill:var(--paper);stroke:var(--d5)"/>
+          <circle cx="392" cy="270" r="6" style="fill:var(--paper);stroke:var(--d4)"/>
+          <circle cx="196" cy="404" r="6" style="fill:var(--paper);stroke:var(--d4)"/>
         </g>
         <g style="font-size:12px;font-family:var(--sans);fill:var(--ink)">
-          <text class="lbl" x="120" y="222" text-anchor="middle">蓝山 · 9/30</text>
+          <text class="lbl" x="400" y="158" text-anchor="middle">邦迪海滩 · 9/30</text>
           <text class="lbl" x="330" y="136" text-anchor="middle">悉尼 · 环形码头</text>
           <text class="lbl" x="330" y="122" text-anchor="middle" style="font-size:10.5px;fill:var(--ink3)">9/28–9/29</text>
           <text class="lbl" x="404" y="236" text-anchor="start">悉尼机场</text>
           <text class="lbl" x="404" y="250" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">T1 / T3</text>
           <text class="lbl" x="310" y="302" text-anchor="end">凯马喷水洞 · 10/1</text>
-          <text class="lbl" x="386" y="340" text-anchor="end">海崖大桥</text>
+          <text class="lbl" x="376" y="274" text-anchor="end">海崖大桥</text>
           <text class="lbl" x="266" y="372" text-anchor="start">卡拉拉海湾</text>
           <text class="lbl" x="266" y="386" text-anchor="start" style="font-size:10.5px;fill:var(--ink3)">10/1–10/2</text>
-          <text class="lbl" x="182" y="400" text-anchor="end">海姆斯海滩 · 10/2</text>
+          <text class="lbl" x="182" y="400" text-anchor="end">海姆斯海滩 · 10/1</text>
         </g>
         <g transform="translate(274,206)"><circle r="11" style="fill:var(--d2)"/><text y="3.8" text-anchor="middle" style="font-size:11.5px;font-family:var(--sans);font-weight:700;fill:#fff">1</text></g>
         <g transform="translate(250,362)"><circle r="11" style="fill:var(--d4)"/><text y="3.8" text-anchor="middle" style="font-size:11.5px;font-family:var(--sans);font-weight:700;fill:#fff">2</text></g>
@@ -429,7 +435,8 @@ body.editing .editbar{display:flex}
       <li><span class="k">退税</span>离境退税 TRS：<b>同一商家累计满 A$300</b>、离境前 60 天内购买、随身携带商品与小票。墨尔本机场 T2 出发层有 TRS 柜台，10/7 是早班机，退税排队要留足时间。</li>
       <li><span class="k">大洋路</span>沿线加油站稀少且偏贵，<b>离开墨尔本前加满油</b>；Wongarra 一带手机信号弱，出发前把导航和住宿联系方式离线存好。</li>
       <li><span class="k">看企鹅</span>圣基尔达防波堤的小蓝企鹅是<b>野生保护动物</b>：禁闪光灯、禁大声喧哗、禁投喂、保持两米以上距离，日落后不要用强光手电乱照。</li>
-      <li><span class="k">天气</span>墨尔本一天四季，10 月初白天 15–20℃、早晚偏凉且多风，<b>薄外套 + 防风衣</b>常备；日照强，防晒也别省。蓝山和十二门徒岩风大，比市区冷一档。</li>
+      <li><span class="k">出海观鲸</span>杰维斯湾船上风大浪颠，<b>提前半小时吃晕船药</b>，外套要防风；鲸鱼多在船侧几十米外出现，<b>别为了拍照挤到船沿</b>，带长焦比带广角好使。</li>
+      <li><span class="k">天气</span>墨尔本一天四季，10 月初白天 15–20℃、早晚偏凉且多风，<b>薄外套 + 防风衣</b>常备；日照强，防晒也别省。海边和十二门徒岩风大，比市区冷一档。</li>
       <li><span class="k">假期</span>10/3–10/5 是长周末（10/5 为新州劳动节），加上学校假期，<b>热门景点、餐厅、包车都建议提前订</b>；十二门徒岩上午 11 点前相对清静，你们正好错峰。</li>
       <li><span class="k">紧急</span>报警 / 救护 / 消防统一拨 <b>000</b>。</li>
       <li><span class="k">电源</span>澳洲插座为 <b>I 型三脚扁插</b>（国内两脚可用，三脚需转换头），电压 220–240V，国内电器可直接使用。</li>
@@ -455,6 +462,10 @@ body.editing .editbar{display:flex}
   </div>
 </div>
 
+<!-- 景点实拍图：取自 Wikimedia Commons（CC BY-SA / CC BY / 公有领域），已压缩到约 520px 内嵌为 base64，
+     保证「单文件 + 零外部依赖 + 离线可看」。摄影师署名见页面底部。 -->
+<script id="photoData" type="application/json">{}</script>
+
 <script>
 (function(){
 "use strict";
@@ -466,12 +477,29 @@ var DAY_HOME={d1:'Australia/Sydney',d2:'Australia/Sydney',d3:'Australia/Sydney',
   d6:'Australia/Melbourne',d7:'Australia/Melbourne',d8:'Australia/Melbourne',d9:'Australia/Melbourne',d10:'Australia/Melbourne'};
 
 function offMinutes(tz,d){
+  if(!d) d=new Date();
+  // ① 首选：timeZoneName 直接给出偏移（GMT+10 / GMT+10:30）。
+  //    注意 shortOffset/longOffset 是较新的取值，老引擎会抛 RangeError，故逐个尝试。
+  var names=['shortOffset','longOffset','short'];
+  for(var i=0;i<names.length;i++){
+    try{
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:names[i]}).formatToParts(d);
+      var s=(parts.filter(function(p){return p.type==='timeZoneName'})[0]||{}).value||'';
+      var m=/GMT([+-])(\d{1,2})(?::(\d{2}))?/.exec(s);
+      if(m) return (m[1]==='-'?-1:1)*(parseInt(m[2],10)*60+(m[3]?parseInt(m[3],10):0));
+    }catch(e){}
+  }
+  // ② 兜底：把同一时刻在目标时区与 UTC 的「墙上时间」相减。
+  //    只依赖 IANA 时区支持，任何支持 Intl 的引擎都能算对；绝不再静默返回 0（那会把 UTC+10 显示成 UTC+0）。
   try{
-    var parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'shortOffset'}).formatToParts(d);
-    var s=(parts.filter(function(p){return p.type==='timeZoneName'})[0]||{}).value||'GMT+0';
-    var m=/GMT([+-])(\d{1,2})(?::(\d{2}))?/.exec(s);
-    if(!m) return 0;
-    return (m[1]==='-'?-1:1)*(parseInt(m[2],10)*60+(m[3]?parseInt(m[3],10):0));
+    var o={year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false};
+    var wall=function(zone){
+      var g={};
+      new Intl.DateTimeFormat('en-US',{timeZone:zone,year:o.year,month:o.month,day:o.day,hour:o.hour,minute:o.minute,second:o.second,hour12:false})
+        .formatToParts(d).forEach(function(x){g[x.type]=x.value});
+      return Date.UTC(+g.year,(+g.month)-1,+g.day,(+g.hour)%24,+g.minute,+g.second);
+    };
+    return Math.round((wall(tz)-wall('UTC'))/60000);
   }catch(e){return 0}
 }
 function offLabel(tz,d){
@@ -502,72 +530,87 @@ function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'
 
 /* ========== 默认行程数据（at 为绝对时刻，含真实时区偏移） ========== */
 function D(date,wd,color,city,title,mode,stay,items){return {date:date,wd:wd,color:color,city:city,title:title,mode:mode,stay:stay,items:items}}
-function I(at,time,name,note,place,lat,lng,tag,book){return {at:at,time:time,name:name,note:note,place:place,lat:lat,lng:lng,tag:tag,book:!!book}}
+function I(at,time,name,note,place,lat,lng,tag,book,photo){return {at:at,time:time,name:name,note:note,place:place,lat:lat,lng:lng,tag:tag,book:!!book,photo:photo||null}}
+/* 景点实拍图：从页面里那一段 JSON（#photoData）读取，取不到就当作没有图，不影响其余功能 */
+var PHOTOS={};
+try{PHOTOS=JSON.parse((document.getElementById('photoData')||{}).textContent||'{}')}catch(e){PHOTOS={}}
 
 var DEFAULTS={
 days:[
- D('2026-09-28','周一','d1','悉尼','落地悉尼 · 海港初见','transit',
+ D('2026-09-28','周一','d1','悉尼','落地悉尼 · 塔龙加动物园 · 夜访鱼市场','transit',
   {name:'339 Sussex Street（第 1–3 晚）',addr:'339 Sussex St, Sydney NSW 2000',place:'339 Sussex St, Sydney NSW 2000'},
   [
   I('2026-09-28T06:10:00+10:00','06:10','降落悉尼金斯福德·史密斯机场 T1','国泰 CX111 · 空客 A350-900 · 飞行 9 小时 5 分 · 起降均为当地时间','Sydney Airport Terminal 1 International, Mascot NSW 2020',-33.9344,151.1657,'flight'),
   I('2026-09-28T07:10:00+10:00','07:10','预约接机车上车','7 座 · 13 公里约 20 分钟 · 含 60 分钟免费等待 · 服务商「远山旅游」。06:10 落地，入境 + 取行李要 45–75 分钟，07:10 上车更从容','Sydney Airport Terminal 1, Mascot NSW 2020',-33.9344,151.1657,'car'),
-  I('2026-09-28T07:45:00+10:00','07:45','到住处寄存行李','房东 Milan · 15:00 才能正式入住，先寄行李、洗漱、换身衣服','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
-  I('2026-09-28T10:00:00+10:00','10:00','环形码头 Circular Quay 漫步','住处坐轻轨或步行约 15 分钟，先去码头看海港最开阔的一段','Circular Quay, Sydney NSW 2000',-33.8610,151.2105),
-  I('2026-09-28T10:40:00+10:00','10:40','悉尼歌剧院外景 + 海港大桥','内部导览排在 9/29，今天先在歌剧院广场和岩石区一侧取景','Sydney Opera House, Bennelong Point, Sydney NSW 2000',-33.8568,151.2153),
-  I('2026-09-28T12:30:00+10:00','12:30','岩石区 The Rocks 午餐','步行约 8 分钟，历史街区里的酒馆与咖啡馆密集','The Rocks, Sydney NSW 2000',-33.8599,151.2087),
-  I('2026-09-28T14:00:00+10:00','14:00','办入住、补觉倒时差','长途飞行后睡 2 小时，比硬撑着多逛两个景点划算','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
-  I('2026-09-28T17:30:00+10:00','17:30','达令港 Darling Harbour 晚餐 + 夜景','步行 10 分钟，水边餐厅多，饭后沿岸散步','Darling Harbour, Sydney NSW 2000',-33.8740,151.2010),
-  I('2026-09-28T20:30:00+10:00','20:30','回住处休息','明天 09:00 有歌剧院导览，早点睡','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
+  I('2026-09-28T07:45:00+10:00','07:45','到住处寄存行李','房东 Milan · 15:00 才能正式入住，先把行李寄下、洗漱换身衣服再出门','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
+  I('2026-09-28T08:40:00+10:00','08:40','环形码头 Wharf 4 坐 F2 渡轮去塔龙加','刷 Opal 卡约 A$9 · 船程 12 分钟约每 30 分钟一班。渡轮一出港就是歌剧院和海港大桥的最佳机位，别躲在舱里','Circular Quay Wharf 4, Sydney NSW 2000',-33.8610,151.2105),
+  I('2026-09-28T09:30:00+10:00','09:30','塔龙加动物园 Taronga Zoo','09:30 开门。缆车 Sky Safari 2023 年就退役了（新缆车要 2027 年底才回来），下船后坐 238 路公交或园方接驳车上山顶正门，再一路往下逛省力。长颈鹿区背后就是悉尼天际线，考拉、袋鼠、鸭嘴兽都在澳洲本土动物区','Taronga Zoo, Bradleys Head Rd, Mosman NSW 2088',-33.8433,151.2412,null,null,'taronga'),
+  I('2026-09-28T13:30:00+10:00','13:30','坐渡轮返回环形码头','动物园下出口走到码头只要 3 分钟，回程同样约 12 分钟','Taronga Zoo Wharf, Mosman NSW 2088',-33.8425,151.2400),
+  I('2026-09-28T14:30:00+10:00','14:30','回住处补觉、倒时差','15:00 正式入住（房东 Milan）。长途飞行后睡 1.5–2 小时，比硬撑着多逛两个点划算，闹钟定 16:45','339 Sussex St, Sydney NSW 2000',null,null,'stay'),
+  I('2026-09-28T17:00:00+10:00','17:00','悉尼大学 · 主楼 Quadrangle','打车约 15 分钟。1850 年代的砂岩四方院，拱廊和草坪是经典机位；校园自由进出，日落前光线最好','University of Sydney Quadrangle, Camperdown NSW 2006',-33.8869,151.1889,null,null,'usyd'),
+  I('2026-09-28T18:30:00+10:00','18:30','打车去悉尼鱼市场（新址）','约 12 分钟 / 4 公里。鱼市场 2026 年 1 月已从 Pyrmont 搬到 Blackwattle Bay 新楼（1 Bridge Road, Glebe），打车和导航都别再用旧地址','Sydney Fish Market, 1 Bridge Road, Glebe NSW 2037',-33.8700,151.1860,null,null,'fishmarket'),
+  I('2026-09-28T18:45:00+10:00','18:45','鱼市场现买现做 · 海鲜晚餐','生蚝论只现开、龙虾可代加工、刺身拼盘都值得；新市场比旧址大一倍，餐厅开到晚上（周日–周四到 22:00），找水边的位子吃','Sydney Fish Market, 1 Bridge Road, Glebe NSW 2037',null,null),
+  I('2026-09-28T21:00:00+10:00','21:00','回住处休息','打车约 15 分钟。今天在外面待了整整一天，明天全天市区徒步，记得穿运动鞋','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
   ]),
  D('2026-09-29','周二','d2','悉尼','歌剧院入内 · 港湾地标一日','walking',
   {name:'339 Sussex Street（第 1–3 晚）',addr:'339 Sussex St, Sydney NSW 2000',place:'339 Sussex St, Sydney NSW 2000'},
   [
   I('2026-09-29T09:00:00+10:00','09:00','悉尼歌剧院 1 小时中文导览','每日 09:00–17:00 场次，中文场次少，务必提前订票；集合点在歌剧院 Welcome Centre','Sydney Opera House, Bennelong Point, Sydney NSW 2000',-33.8568,151.2153,'book',true),
   I('2026-09-29T10:30:00+10:00','10:30','皇家植物园 + 麦考利夫人座椅','从歌剧院沿水边步行 10 分钟，这里是同时拍到歌剧院与海港大桥的最佳机位','Mrs Macquaries Chair, 1D Mrs Macquaries Rd, Sydney NSW 2000',-33.8597,151.2228),
-  I('2026-09-29T12:00:00+10:00','12:00','悉尼鱼市场 Fish Market 午餐','打车或公交约 20 分钟，生蚝和龙虾刺身现买现吃，人多但翻台快','Sydney Fish Market, Bank St, Pyrmont NSW 2009',-33.8685,151.1925),
-  I('2026-09-29T14:00:00+10:00','14:00','海港大桥步行 + Pylon Lookout 瞭望塔','从岩石区一侧上桥，桥面人行道单程约 20 分钟，瞭望塔现场购票','Pylon Lookout, Sydney Harbour Bridge, Sydney NSW 2000',-33.8523,151.2108),
-  I('2026-09-29T16:30:00+10:00','16:30','环形码头坐渡轮兜一圈','任选一班 F1 线，坐到船上吹海风看天际线，是最省钱的观光方式','Circular Quay Wharf, Sydney NSW 2000',-33.8610,151.2105),
-  I('2026-09-29T18:00:00+10:00','18:00','悉尼塔观景台 Sydney Tower Eye','360° 俯瞰全城，日落前后上塔效果最好','Sydney Tower Eye, 100 Market St, Sydney NSW 2000',-33.8704,151.2088),
-  I('2026-09-29T19:30:00+10:00','19:30','晚餐（唐人街 Haymarket / 达令港）','悉尼塔往南步行 10 分钟就是唐人街，中餐选择多','Haymarket, Sydney NSW 2000',-33.8795,151.2060)
+  I('2026-09-29T12:00:00+10:00','12:00','环形码头 / 巴兰加鲁 午餐','歌剧院出来沿水边走就是环形码头，Barangaroo 一带海滨餐厅集中，也可以去岩石区吃','Circular Quay, Sydney NSW 2000',-33.8610,151.2105),
+  I('2026-09-29T13:30:00+10:00','13:30','海港大桥步行 + Pylon Lookout 瞭望塔','从岩石区一侧上桥，桥面人行道单程约 20 分钟，瞭望塔现场购票','Pylon Lookout, Sydney Harbour Bridge, Sydney NSW 2000',-33.8523,151.2108),
+  I('2026-09-29T15:00:00+10:00','15:00','环形码头坐 F1 渡轮去曼利','刷 Opal 卡 · 船程约 30 分钟，一路贴着内海走，是悉尼最便宜的一趟「观光游船」','Circular Quay Wharf, Sydney NSW 2000',-33.8610,151.2105),
+  I('2026-09-29T15:45:00+10:00','15:45','曼利海滩 + Corso 步行街','码头步行 5 分钟就到海滩，南端有海水泳池；Corso 步行街有咖啡馆和冰淇淋店','Manly Beach, Manly NSW 2095',-33.7960,151.2880),
+  I('2026-09-29T17:30:00+10:00','17:30','曼利海滨步道散步','往南沿 Queenscliff / Freshwater 方向的海滨步道走一段，再折回码头一带','Manly Beach, Manly NSW 2095',null,null),
+  I('2026-09-29T18:15:00+10:00','18:15','坐渡轮返程，在船上迎日落','曼利 → 环形码头约 30 分钟，船头朝西，9/29 日落约 18:50，正好在海上迎着日落和城市天际线','Manly Wharf, Manly NSW 2095',-33.7990,151.2840),
+  I('2026-09-29T19:30:00+10:00','19:30','晚餐（环形码头 / 岩石区 / 唐人街）','下船就近吃，岩石区的酒馆和唐人街中餐都方便','The Rocks, Sydney NSW 2000',-33.8599,151.2087),
+  I('2026-09-29T21:00:00+10:00','21:00','回住处休息','明天去邦迪，08:45 出发','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
   ]),
- D('2026-09-30','周三','d3','悉尼','蓝山一日（火车往返，无需自驾）','walking',
+ D('2026-09-30','周三','d3','悉尼','邦迪海岸徒步 · 鱼市场海鲜','walking',
   {name:'339 Sussex Street（第 1–3 晚）',addr:'339 Sussex St, Sydney NSW 2000',place:'339 Sussex St, Sydney NSW 2000'},
   [
-  I('2026-09-30T07:50:00+10:00','07:50','中央车站 Central 出发','蓝山线直达 Katoomba，刷 Opal 卡，车程约 2 小时','Central Station, Eddy Ave, Sydney NSW 2000',-33.8830,151.2070),
-  I('2026-09-30T10:00:00+10:00','10:00','抵达 Katoomba 小镇','出站可换乘 686 路观光巴士，也可打车（约 10 分钟到回声角）','Katoomba Station, Katoomba NSW 2780',-33.7120,150.3120),
-  I('2026-09-30T10:30:00+10:00','10:30','回声角 Echo Point + 三姐妹峰','免费观景台，就在悬崖边，风大要穿外套','Echo Point Lookout, Katoomba NSW 2780',-33.7320,150.3120),
-  I('2026-09-30T11:30:00+10:00','11:30','蓝山景观世界 Scenic World','Discovery Pass 含空中缆车、索道、观光小火车与雨林步道，建议留 2–3 小时；需提前订票','Scenic World, 1 Violet St, Katoomba NSW 2780',-33.7293,150.3010,'book',true),
-  I('2026-09-30T15:00:00+10:00','15:00','卢拉小镇 Leura 下午茶','从 Katoomba 坐一站火车即到，主街有茶屋和手作小店','Leura Mall, Leura NSW 2780',-33.7120,150.3310),
-  I('2026-09-30T17:00:00+10:00','17:00','火车返回悉尼','Katoomba → Central 约 2 小时，车上正好休息','Katoomba Station, Katoomba NSW 2780',-33.7120,150.3120),
-  I('2026-09-30T19:30:00+10:00','19:30','回住处，晚餐就近解决','明天要带着行李南下，先把要用的东西整理好','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
+  I('2026-09-30T08:45:00+10:00','08:45','出发去邦迪海滩','住处打车约 20 分钟；也可坐火车到 Bondi Junction 再换 333 路公交','Bondi Beach, NSW 2026',-33.8915,151.2767),
+  I('2026-09-30T09:30:00+10:00','09:30','邦迪海滩 Brunch','Hall St 与 Campbell Parade 沿街咖啡馆密集，找家看得到海景的慢慢吃','Bondi Beach, NSW 2026',null,null),
+  I('2026-09-30T10:45:00+10:00','10:45','邦迪冰山泳池 Bondi Icebergs 外景','南端悬崖上的网红泳池，观景台免费，不下水也能拍到经典机位','Bondi Icebergs Club, 1 Notts Ave, Bondi Beach NSW 2026',-33.8935,151.2775),
+  I('2026-09-30T11:15:00+10:00','11:15','邦迪 → 库吉 海岸徒步（约 6 公里）','全程约 2.5–3 小时，途经 Tamarama、Bronte、Clovelly；全程几乎无遮挡，高倍防晒 + 每人带足水','Bondi to Coogee Coastal Walk, NSW 2026',-33.8980,151.2680),
+  I('2026-09-30T13:00:00+10:00','13:00','布朗特海滩 Bronte 午餐','徒步中段的海滩，有咖啡馆和炸鱼薯条，也可以下水凉一下','Bronte Beach, NSW 2024',-33.9040,151.2680),
+  I('2026-09-30T14:30:00+10:00','14:30','抵达库吉海滩 Coogee','徒步终点，海水平静；走不动的话这一段随时可以上公交或打车','Coogee Beach, NSW 2034',-33.9210,151.2580),
+  I('2026-09-30T15:30:00+10:00','15:30','打车去悉尼鱼市场（新址）','约 25 分钟。鱼市场 2026 年 1 月已从 Pyrmont 搬到 Blackwattle Bay 新楼，导航和打车别再用旧地址','Sydney Fish Market, 1 Bridge Road, Glebe NSW 2037',-33.8700,151.1860),
+  I('2026-09-30T16:00:00+10:00','16:00','悉尼鱼市场：现买现做','生蚝论只现开、龙虾可代加工、刺身拼盘都值得；新市场比旧址大一倍，还有露天步道','Sydney Fish Market, 1 Bridge Road, Glebe NSW 2037',null,null),
+  I('2026-09-30T18:00:00+10:00','18:00','鱼市场晚餐','新市场餐厅营业到晚上（周日–周四 07:00–22:00），坐水边吃海鲜看天色暗下来；想吃热的场内也有餐厅','Sydney Fish Market, 1 Bridge Road, Glebe NSW 2037',null,null),
+  I('2026-09-30T19:30:00+10:00','19:30','回住处，收拾行李','明天 09:00 提车南下，把行李、驾照、翻译件和信用卡先理好','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay')
   ]),
- D('2026-10-01','周四','d4','悉尼 → 杰维斯湾','提车南下杰维斯湾 · 自驾第 1 天','driving',
+ D('2026-10-01','周四','d4','悉尼 → 杰维斯湾','大太平洋公路 · 提车南下 · 自驾第 1 天','driving',
   {name:'40 Tidy Close, Callala Bay（第 4 晚）',addr:'40 Tidy Close, Callala Bay NSW 2540',place:'40 Tidy Close, Callala Bay NSW 2540'},
   [
   I('2026-10-01T08:30:00+10:00','08:30','退房、行李集中到楼下','退房截止 10:00，先把行李搬到门厅，退房手续回来再补','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'stay'),
   I('2026-10-01T09:00:00+10:00','09:00','SIXT 取车 + 验车','起亚嘉华 8 座（或同组车型）· 带齐：中国驾照原件 + NAATI 英文翻译件 + 主驾信用卡（押金预授权）· 提车前绕车拍一圈视频，划痕、油量、里程都拍进去','SIXT car rental Sydney',null,null,'car'),
-  I('2026-10-01T09:45:00+10:00','09:45','装行李，出发南下','5 人 + 3 个 24 寸箱，放倒第三排刚好。悉尼 → 卡拉拉海湾约 200 公里 / 3 小时，走王子公路一路向南','339 Sussex St, Sydney NSW 2000',-33.8736,151.2035,'car'),
-  I('2026-10-01T11:30:00+10:00','11:30','凯马喷水洞 Kiama Blowhole + 灯塔','途中停留约 1 小时，风大时水柱能喷十几米高，观景步道免费；镇上有加油站和洗手间','Kiama Blowhole, Blowhole Point Rd, Kiama NSW 2533',-34.6716,150.8620),
-  I('2026-10-01T12:30:00+10:00','12:30','凯马 / 杰林冈 午餐','小镇咖啡馆和炸鱼薯条店为主，建议在凯马解决','Kiama NSW 2533',-34.6716,150.8620),
-  I('2026-10-01T15:00:00+10:00','15:00','抵达卡拉拉海湾，入住 40 Tidy Close','房东 Nicole · 入住时间 15:00 · 先跟房东确认停车位（院内或路边）','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
+  I('2026-10-01T09:45:00+10:00','09:45','装行李，出发南下走大太平洋公路','5 人 + 3 个 24 寸箱，放倒第三排刚好。今天全程沿海岸线走，悉尼 → 卡拉拉海湾约 200 公里','339 Sussex St, Sydney NSW 2000',null,null,'car'),
+  I('2026-10-01T10:45:00+10:00','10:45','皇家国家公园 · 秃山观景台 Bald Hill','从斯坦威尔峰俯瞰整条大太平洋公路与海岸线，是这条路最经典的机位，观景台免费','Bald Hill Lookout, Stanwell Tops NSW 2508',-34.2270,150.9780),
+  I('2026-10-01T11:15:00+10:00','11:15','海崖大桥 Sea Cliff Bridge','桥架在悬崖与海面之间，路边有停车带，可以下车走一段、拍几张','Sea Cliff Bridge, Coalcliff NSW 2508',-34.2462,150.9738),
+  I('2026-10-01T12:20:00+10:00','12:20','凯马喷水洞 Kiama Blowhole + 灯塔','风大时水柱能喷十几米高，观景步道免费；镇上有加油站和洗手间','Kiama Blowhole, Blowhole Point Rd, Kiama NSW 2533',-34.6716,150.8620),
+  I('2026-10-01T13:00:00+10:00','13:00','凯马 / 杰林冈 午餐','小镇咖啡馆和炸鱼薯条店为主，建议在凯马解决','Kiama NSW 2533',null,null),
+  I('2026-10-01T14:15:00+10:00','14:15','贝里小镇 Berry 歇脚','南下路上的文艺小村，主街有甜点店和手作杂货；著名的 Berry Donut Van 排一会儿队值得','Berry NSW 2535',-34.7760,150.6940),
+  I('2026-10-01T15:30:00+10:00','15:30','抵达卡拉拉海湾，入住 40 Tidy Close','房东 Nicole · 入住时间 15:00 · 先跟房东确认停车位（院内或路边）','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
   I('2026-10-01T16:30:00+10:00','16:30','卡拉拉海滩 Callala Beach 散步','步行可达，湾内水面平静适合下水，10 月水温仍偏凉','Callala Beach, Callala Bay NSW 2540',-35.0000,150.7200),
-  I('2026-10-01T18:30:00+10:00','18:30','小镇晚餐','卡拉拉海湾餐馆不多，最好提前订位；也可在超市买海鲜回住处自己做','Callala Bay NSW 2540',-35.0044,150.6889),
-  I('2026-10-01T20:00:00+10:00','20:00','回住处','明天要赶 18:15 的飞机，今晚先把行李收好；出发前顺路在杰维斯湾把油加满','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay')
+  I('2026-10-01T17:20:00+10:00','17:20','海姆斯海滩 Hyams Beach 看日落','自驾约 20 分钟。Hyams Beach 被公认是白沙之最；10/1 日落约 18:50（10/4 才进夏令时），傍晚顺光看海面最漂亮，记得带外套','Hyams Beach, NSW 2540',-35.1008,150.6890),
+  I('2026-10-01T19:30:00+10:00','19:30','晚餐（赫斯基森 / 卡拉拉海湾）','赫斯基森餐馆选择更多，车程约 20 分钟；卡拉拉海湾餐馆少，最好提前订位','Huskisson NSW 2540',-35.0400,150.6700),
+  I('2026-10-01T21:00:00+10:00','21:00','回住处','明早 08:30 有观鲸船，行李今晚先收好；明早退房后直接装车','40 Tidy Close, Callala Bay NSW 2540',null,null,'stay')
   ]),
- D('2026-10-02','周五','d5','杰维斯湾 → 墨尔本','白沙滩 · 大太平洋公路 · 还车飞墨尔本 · 自驾第 2 天','driving',
+ D('2026-10-02','周五','d5','杰维斯湾 → 墨尔本','出海观鲸 · 还车飞墨尔本 · 自驾第 2 天','driving',
   {name:'88 Park Street, South Melbourne（第 5–6 晚）',addr:'88 Park St, South Melbourne VIC 3205',place:'88 Park St, South Melbourne VIC 3205'},
   [
-  I('2026-10-02T07:30:00+10:00','07:30','早餐、收拾行李','与房东谈好提前退房（截止 10:00），行李全部装车','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
-  I('2026-10-02T08:15:00+10:00','08:15','出发去海姆斯海滩','自驾约 20 分钟','Hyams Beach, NSW 2540',-35.1008,150.6890),
-  I('2026-10-02T08:45:00+10:00','08:45','海姆斯海滩 Hyams Beach','被公认的白沙之最，沙细水清，浅滩适合玩水','Hyams Beach, NSW 2540',-35.1008,150.6890),
-  I('2026-10-02T09:30:00+10:00','09:30','返回住处办退房','退房截止 10:00，务必卡住时间','40 Tidy Close, Callala Bay NSW 2540',-35.0044,150.6889,'stay'),
-  I('2026-10-02T10:15:00+10:00','10:15','出发北上，走大太平洋公路','卡拉拉海湾 → 悉尼机场约 190 公里 / 3 小时：先走王子公路，再切到海岸线','Callala Bay NSW 2540',-35.0044,150.6889,'car'),
-  I('2026-10-02T12:45:00+10:00','12:45','沿途小镇午餐','凯马或卧龙岗一带解决，之后一路向北沿海岸线走','Wollongong NSW 2500',-34.4248,150.8931),
-  I('2026-10-02T14:00:00+10:00','14:00','海崖大桥 Sea Cliff Bridge','大太平洋公路最出片的一段，桥架在悬崖与海面之间，路边有停车带','Sea Cliff Bridge, Coalcliff NSW 2508',-34.2462,150.9738),
-  I('2026-10-02T14:40:00+10:00','14:40','秃山观景台 Bald Hill Lookout','俯瞰整条大太平洋公路与海岸线，拍完全景直接北上机场','Bald Hill Lookout, Stanwell Tops NSW 2508',-34.2270,150.9780),
-  I('2026-10-02T15:30:00+10:00','15:30','机场附近加满油 → SIXT 还车','还车前一定加满，否则按高价代加油扣款；还车预留 30 分钟验车交接，再坐接驳或步行去 T3','Sydney Airport, Mascot NSW 2020',-33.9366,151.1740,'car'),
-  I('2026-10-02T16:15:00+10:00','16:15','抵达悉尼机场 T3 办登机','国内航站楼，建议起飞前 90 分钟；澳航 QF479','Sydney Airport Terminal 3, Mascot NSW 2020',-33.9366,151.1740),
-  I('2026-10-02T18:15:00+10:00','18:15','QF479 起飞 → 19:50 抵达墨尔本 T1','飞行 1 小时 35 分，起降均为当地时间','Sydney Airport Terminal 3, Mascot NSW 2020',-33.9366,151.1740,'flight'),
+  I('2026-10-02T06:45:00+10:00','06:45','起床、收行李','今天要退房、赶观鲸船、再赶飞机，节奏很紧，前一晚务必把行李收好','40 Tidy Close, Callala Bay NSW 2540',null,null,'stay'),
+  I('2026-10-02T07:15:00+10:00','07:15','办退房，行李全部装车','退房截止 10:00，但今天 11:15 才回得来，务必提前跟房东 Nicole 约好 07:15 退房或钥匙箱','40 Tidy Close, Callala Bay NSW 2540',null,null,'car'),
+  I('2026-10-02T07:30:00+10:00','07:30','出发去赫斯基森码头','Jervis Bay 观鲸船出发点，自驾约 20 分钟','Huskisson NSW 2540',-35.0400,150.6700),
+  I('2026-10-02T07:50:00+10:00','07:50','抵达码头取票、登船准备','提前 20–30 分钟到；海上风大且颠，备防风外套，晕船的提前半小时吃药','Huskisson Wharf, Huskisson NSW 2540',null,null),
+  I('2026-10-02T08:30:00+10:00','08:30','杰维斯湾观鲸出海（约 2.5–3 小时）','10 月是座头鲸南迁季，常见母鲸带幼鲸。船票务必提前订，订票时问清「当天没看到鲸鱼能否免费补一次」','Jervis Bay, NSW 2540',null,null,'book',true),
+  I('2026-10-02T11:15:00+10:00','11:15','靠岸，回车上出发','下船直接走，别在镇上多停','Huskisson NSW 2540',null,null),
+  I('2026-10-02T11:30:00+10:00','11:30','出发北上悉尼（走内陆王子公路）','卡拉拉海湾 → 悉尼机场约 200 公里 / 2 小时 45 分。今天赶飞机，走内陆 M1 最快，不再绕海岸线','Callala Bay NSW 2540',-35.0044,150.6889,'car'),
+  I('2026-10-02T12:45:00+10:00','12:45','沿途服务区午餐','路上简单解决，控制在 30 分钟内；如果出海延误就直接跳过、车上解决','Sutton Forest NSW 2577',-34.5600,150.2900),
+  I('2026-10-02T15:00:00+10:00','15:00','机场附近加满油 → SIXT 还车','还车前一定加满，否则按高价代加油扣款；还车预留 30 分钟验车交接','Sydney Airport, Mascot NSW 2020',-33.9366,151.1740,'car'),
+  I('2026-10-02T15:45:00+10:00','15:45','抵达悉尼机场 T3 办登机','国内航站楼 · 澳航 QF479 · 建议起飞前 90 分钟到；还车后坐接驳或步行去 T3','Sydney Airport Terminal 3, Mascot NSW 2020',null,null),
+  I('2026-10-02T18:15:00+10:00','18:15','QF479 起飞 → 19:50 抵达墨尔本 T1','飞行 1 小时 35 分，起降均为当地时间（10/2 尚未进入夏令时，两地同为 UTC+10）','Sydney Airport Terminal 3, Mascot NSW 2020',null,null,'flight'),
   I('2026-10-02T20:15:00+10:00','20:15','取行李、叫车去南墨尔本','图拉马莱恩机场 → 南墨尔本约 25 分钟','Melbourne Airport, Tullamarine VIC 3043',null,null),
   I('2026-10-02T21:00:00+10:00','21:00','入住 88 Park Street, South Melbourne','21:00 到店，入住方式（钥匙箱 / 自助）需提前与房东确认','88 Park St, South Melbourne VIC 3205',null,null,'stay'),
   I('2026-10-02T21:30:00+10:00','21:30','Clarendon St 晚餐','南墨尔本主街，餐馆营业到较晚，落地就能吃上热的','Clarendon St, South Melbourne VIC 3205',null,null)
@@ -594,24 +637,25 @@ days:[
   I('2026-10-04T11:00:00+11:00','11:00','大洋路纪念拱门 Memorial Arch','大洋路上最经典的标志性牌坊，到此一游的打卡点','Great Ocean Road Memorial Arch, Eastern View VIC 3231',-38.4820,143.9400),
   I('2026-10-04T11:40:00+11:00','11:40','安格尔西 Anglesea · 高尔夫球场野生袋鼠','球场外草坪上常有成群东部灰袋鼠，免费围观，别靠太近','Anglesea Golf Club, Anglesea VIC 3230',-38.4060,144.1880),
   I('2026-10-04T12:40:00+11:00','12:40','洛恩 Lorne 午餐','大洋路上最热闹的海滨小镇，假期人多，尽量 12:30 前到','Lorne VIC 3232',-38.5400,143.9750),
-  I('2026-10-04T14:00:00+11:00','14:00','怀伊河 / 肯尼特河 找野生考拉','路边桉树上常有野生考拉，慢点开车、轻声靠近，别敲树','Kennett River VIC 3234',-38.6560,143.8600),
-  I('2026-10-04T15:30:00+11:00','15:30','入住 Wongarra 海滨公寓','5230 Great Ocean Road · The Jewel · Whitecrest 海景公寓；门禁与钥匙箱信息请提前问房东','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'stay'),
-  I('2026-10-04T16:30:00+11:00','16:30','公寓阳台看海 / 走到海滩','这一晚的意义就在这里，不用赶路','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'stay'),
-  I('2026-10-04T18:30:00+11:00','18:30','吃晚饭，然后看日落','夏令时后日落约 19:45；沿线餐馆少，建议在洛恩打包或公寓自己做，边吃边等日落','Wongarra VIC 3221',-38.7000,143.7800),
-  I('2026-10-04T20:30:00+11:00','20:30','休息','明早 08:00 出发去十二门徒岩','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'stay')
+  I('2026-10-04T13:50:00+11:00','13:50','厄斯金瀑布 Erskine Falls','从洛恩主街开车约 10 分钟进山；停车场到上层观景台步行 5 分钟，下到瀑布底约 200 级台阶，雨后水量最大','Erskine Falls, Erskine Falls Access Rd, Lorne VIC 3232',-38.5175,143.9160),
+  I('2026-10-04T15:00:00+11:00','15:00','怀伊河 / 肯尼特河 找野生考拉','路边桉树上常有野生考拉，慢点开车、轻声靠近，别敲树','Kennett River VIC 3234',-38.6560,143.8600),
+  I('2026-10-04T16:00:00+11:00','16:00','入住 Wongarra 海滨公寓','5230 Great Ocean Road · The Jewel · Whitecrest 海景公寓；门禁与钥匙箱信息请提前问房东','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'stay'),
+  I('2026-10-04T17:00:00+11:00','17:00','公寓阳台看海 / 走到海滩','这一晚的意义就在这里，不用赶路','5230 Great Ocean Road, Wongarra VIC 3221',null,null,'stay'),
+  I('2026-10-04T18:30:00+11:00','18:30','吃晚饭，然后看日落','夏令时后日落约 19:45；沿线餐馆少，建议在洛恩打包或公寓自己做，边吃边等日落','Wongarra VIC 3221',null,null),
+  I('2026-10-04T20:30:00+11:00','20:30','休息','明早 07:30 出发，先去阿波罗湾吃早餐、加满油','5230 Great Ocean Road, Wongarra VIC 3221',null,null,'stay')
   ]),
  D('2026-10-05','周一','d8','大洋路 → 墨尔本','十二门徒岩 · 包车第 2 天 · 回墨尔本','driving',
   {name:'38 Rose Lane, Melbourne（第 8–9 晚）',addr:'38 Rose Lane, Melbourne VIC 3000',place:'38 Rose Lane, Melbourne VIC 3000'},
   [
   I('2026-10-05T06:30:00+11:00','06:30','公寓看日出（可选）','住在大洋路边，日出就在阳台外','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800),
-  I('2026-10-05T08:00:00+11:00','08:00','出发西行去十二门徒岩','Wongarra → 十二门徒岩约 55 公里、1 小时','5230 Great Ocean Road, Wongarra VIC 3221',-38.7000,143.7800,'car'),
-  I('2026-10-05T08:45:00+11:00','08:45','阿波罗湾 Apollo Bay 早餐','小镇咖啡馆集中，也是这一路最后一个像样的补给点','Apollo Bay VIC 3233',-38.7550,143.6700),
-  I('2026-10-05T10:10:00+11:00','10:10','吉布森台阶 Gibson Steps','走下 86 级台阶到海滩，从沙滩仰望两座巨岩','Gibson Steps, Princetown VIC 3269',-38.6690,143.1110),
-  I('2026-10-05T10:45:00+11:00','10:45','十二门徒岩 Twelve Apostles','免费、全天开放；停车场 12:00–17:00 最挤，上午 11 点前到正好错峰','Twelve Apostles, Great Ocean Road, Princetown VIC 3269',-38.6653,143.1047),
-  I('2026-10-05T11:45:00+11:00','11:45','洛克阿德峡谷 Loch Ard Gorge','同一园区，栈道能下到沙滩，人比十二门徒少很多','Loch Ard Gorge, Port Campbell VIC 3269',-38.6480,143.0700),
+  I('2026-10-05T07:30:00+11:00','07:30','出发去阿波罗湾吃早餐、加满油','Wongarra 在阿波罗湾以东约 20 分钟车程；小镇咖啡馆集中，也是这一路最后一个像样的补给点','Apollo Bay VIC 3233',-38.7550,143.6700),
+  I('2026-10-05T08:30:00+11:00','08:30','出发西行去十二门徒岩','阿波罗湾 → 十二门徒岩约 90 公里、1 小时 30 分，这一段多弯道，开不快','Apollo Bay VIC 3233',null,null,'car'),
+  I('2026-10-05T10:05:00+11:00','10:05','吉布森台阶 Gibson Steps','走下 86 级台阶到海滩，从沙滩仰望两座巨岩','Gibson Steps, Princetown VIC 3269',-38.6690,143.1110),
+  I('2026-10-05T10:40:00+11:00','10:40','十二门徒岩 Twelve Apostles','免费、全天开放；上午顺光，且 11 点前能避开旅行团高峰','Twelve Apostles, Great Ocean Road, Princetown VIC 3269',-38.6653,143.1047),
+  I('2026-10-05T11:40:00+11:00','11:40','洛克阿德峡谷 Loch Ard Gorge','同一园区，栈道能下到沙滩，人比十二门徒少很多','Loch Ard Gorge, Port Campbell VIC 3269',-38.6480,143.0700),
   I('2026-10-05T12:40:00+11:00','12:40','坎贝尔港 Port Campbell 午餐','大洋路上的小镇，餐馆不多，假期建议提前订位','Port Campbell VIC 3269',-38.6190,142.9960),
-  I('2026-10-05T14:00:00+11:00','14:00','返程墨尔本（走内陆王子公路）','坎贝尔港 → 墨尔本约 230 公里、3 小时 15 分，内陆比原路折回快得多','Port Campbell VIC 3269',-38.6190,142.9960,'car'),
-  I('2026-10-05T17:30:00+11:00','17:30','入住 38 Rose Lane, 墨尔本 CBD','近南十字车站与 Marvel Stadium，10/7 凌晨去机场方便','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
+  I('2026-10-05T13:45:00+11:00','13:45','返程墨尔本（走内陆王子公路 A1）','坎贝尔港 → 墨尔本约 230 公里、3 小时 15 分；内陆比原路折回快得多，也不用走夜路','Port Campbell VIC 3269',null,null,'car'),
+  I('2026-10-05T17:15:00+11:00','17:15','入住 38 Rose Lane, 墨尔本 CBD','近南十字车站与 Marvel Stadium，10/7 凌晨去机场方便','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
   I('2026-10-05T19:00:00+11:00','19:00','晚餐（南岸 Southbank / 唐人街）','南岸河边餐厅多，步行或电车可达','Southbank, Melbourne VIC 3006',-37.8220,144.9640)
   ]),
  D('2026-10-06','周二','d9','墨尔本','普芬比利蒸汽火车 + 圣基尔达小企鹅','walking',
@@ -621,7 +665,7 @@ days:[
   I('2026-10-06T08:45:00+11:00','08:45','坐 Belgrave 线去贝尔格雷夫','全程约 1 小时 10 分，Myki 卡刷卡；普芬比利车站就在地铁站旁','Flinders Street Station, Melbourne VIC 3000',-37.8183,144.9670),
   I('2026-10-06T10:00:00+11:00','10:00','普芬比利蒸汽火车','Belgrave ↔ Lakeside 往返，成人 A$66 / 儿童 A$33，全程约 3 小时；可坐在车厢门口把脚伸出去（经典玩法）；必须提前订票','Puffing Billy Railway, 1 Old Monbulk Rd, Belgrave VIC 3160',-37.9080,145.3560,'book',true),
   I('2026-10-06T13:30:00+11:00','13:30','返回贝尔格雷夫，坐火车回市区','回到市区约 15:00','Belgrave Station, Belgrave VIC 3160',-37.9080,145.3560),
-  I('2026-10-06T15:30:00+11:00','15:30','回 38 Rose Lane 休整','明早 04:15 就要起床，抓紧补个觉','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
+  I('2026-10-06T15:30:00+11:00','15:30','回市区休整 + 采购伴手礼','皇家拱廊 / Bourke St 商场一带买手信最方便（女王市场周二也开市）；明早 04:15 就要起床，别逛太晚，留时间补觉','38 Rose Lane, Melbourne VIC 3000',-37.8158,144.9470,'stay'),
   I('2026-10-06T17:30:00+11:00','17:30','打车 / 电车去圣基尔达 St Kilda','从市区约 20 分钟','St Kilda VIC 3182',-37.8670,144.9760),
   I('2026-10-06T18:30:00+11:00','18:30','圣基尔达海滩 + Acland St 晚餐','海滨大道散步，Acland St 有犹太糕饼店和意餐','Acland St, St Kilda VIC 3182',-37.8675,144.9790),
   I('2026-10-06T19:30:00+11:00','19:30','防波堤看野生小蓝企鹅归巢','免费 · 日落前后（10 月初约 19:45）小企鹅从海里上岸回巢；禁闪光、禁喧哗、保持距离。体力吃紧可提前回住处','St Kilda Pier, St Kilda VIC 3182',-37.8640,144.9660),
@@ -639,14 +683,14 @@ days:[
 ],
 todos:[
  '订 9/29 悉尼歌剧院 1 小时中文导览（场次集中在 09:00–17:00，中文场次少，先订）',
- '订 9/30 蓝山景观世界 Scenic World 门票（Discovery Pass，含缆车 / 索道 / 观光火车）',
+ '订 10/2 杰维斯湾观鲸船票（赫斯基森码头出发 · 早班约 08:30 · 约 2.5–3 小时 · 需提前订，订票时问清「当天没看到鲸鱼能否免费补一次」）',
  '订 10/4–10/5 大洋路包车 · 7 座带司机 · 2 天（墨尔本出发，Wongarra 住宿已在手）',
  '订 10/6 普芬比利蒸汽火车票（Belgrave ↔ Lakeside 往返，成人 A$66 / 儿童 A$33，必须提前预订）',
  '订 10/7 凌晨 04:30 送机专车（38 Rose Lane → MEL T2 · 7 座 · 凌晨车少，务必提前预约）',
  '准备中国驾照的 NAATI 英文翻译件（或国际驾照 IDP），并确认 SIXT 悉尼取车点、还车时间与押金预授权',
  '与远山旅游确认 9/28 接机时间已改为 07:10（订单含 60 分钟免费等待，通知司机即可）',
  '与 88 Park Street 房东确认 10/2 晚 21:00 左右到店的入住方式',
- '与卡拉拉海湾房东 Nicole 确认 10/2 能否 08:15 提前退房（或 10:00 前返回办退房）',
+ '与卡拉拉海湾房东 Nicole 约好 10/2 早上 07:15 退房 / 钥匙箱（上午要出海观鲸，11:15 才回得来，赶不上 10:00 的退房）',
  '与 Wongarra 公寓房东确认门禁与钥匙箱信息（位置偏、无前台，当晚才问会麻烦）',
  '与 38 Rose Lane 确认 10/7 凌晨 04:15 的退房方式（自助退房 / 前台下钥匙箱）',
  '出发前 72 小时在线值机（国泰 CX111、澳航 QF479、国泰 CX134），给 5 人预选座位'
@@ -699,7 +743,7 @@ var ORDERS=[ {g:'✈ 已出票 · 航班',items:[
    sub:'第 8–9 晚 · 近南十字车站，10/7 凌晨去机场方便',addr:'38 Rose Lane, Melbourne VIC 3000',map:'38 Rose Lane, Melbourne VIC 3000',pill:'已订',cls:'ok'}
  ]},
  {g:'🎫 门票 / 一日游',items:[
-  {t:'尚未有已确认的门票订单',tm:'—',tz:'',sub:'需要提前订票的项目已列在「待办清单」里：歌剧院中文导览（9/29）、蓝山景观世界（9/30）、普芬比利蒸汽火车（10/6）',addr:'订好后把凭证发我，我补进这一栏',map:null,pill:'待补',cls:'warn'}
+  {t:'尚未有已确认的门票订单',tm:'—',tz:'',sub:'需要提前订票的项目已列在「待办清单」里：歌剧院中文导览（9/29）、杰维斯湾观鲸船（10/2）、普芬比利蒸汽火车（10/6）',addr:'订好后把凭证发我，我补进这一栏',map:null,pill:'待补',cls:'warn'}
  ]},
  {g:'📞 服务方电话（公开号码）',items:[
   {t:'国泰航空',tm:'中国内地 400 815 2888 · 中国香港 +852 2747 3333',tz:'24 小时客服',
@@ -913,6 +957,7 @@ function renderDays(){
         '<p class="nm">'+(it.place?'<a href="'+maps(it.place)+'" target="_blank" rel="noopener">'+esc(it.name)+'</a>':esc(it.name))+
         (it.book?'<span class="bk">需提前订票</span>':'')+'</p>'+
         (it.note?'<p class="nt">'+esc(it.note)+'</p>':'')+
+        ((it.photo&&PHOTOS[it.photo])?'<figure class="ph"><img src="'+PHOTOS[it.photo]+'" alt="'+esc(it.name)+'" decoding="async"></figure>':'')+
         '<div class="it-ops"><button class="btn-s" data-ei="'+di+'-'+ii+'" title="编辑">改</button>'+
         '<button class="btn-s" data-mi="'+di+'-'+ii+'" title="上移">↑</button>'+
         '<button class="btn-s" data-mid="'+di+'-'+ii+'" title="下移">↓</button>'+
@@ -1169,12 +1214,28 @@ document.getElementById('mOk').addEventListener('click',function(){
 
 /* ========== 启动 ========== */
 function renderAll(){renderLegend();renderOrders();renderDays();renderTodos();tick()}
+/* 带 #day-N 打开（刷新、分享链接）时，把当天卡片对齐到吸顶菜单栏之下。
+   不直接用浏览器原生锚点定位：当天卡片带 overflow:hidden，部分浏览器会忽略它的
+   scroll-margin，结果标题被压在栏下；这里按实测栏高自己算落位，任何浏览器都一致。 */
+function alignToDay(i){
+  var el=document.getElementById('day-'+i);
+  if(!el) return;
+  var nav=document.querySelector('.navbar');
+  var off=(nav?nav.offsetHeight:0)+10;
+  window.scrollTo(0,Math.max(0,el.getBoundingClientRect().top+window.pageYOffset-off));
+}
 STATE=loadState();
 (function(){
   var m=/#day-(\d+)/.exec(location.hash||'');
   if(m){var i=+m[1];if(i>=0&&i<STATE.days.length) activeDay=i}
 })();
 renderAll();
+(function(){
+  if(!/#day-\d+/.test(location.hash||'')) return;
+  var go=function(){alignToDay(activeDay)};
+  window.addEventListener('load',function(){window.setTimeout(go,60)});
+  window.setTimeout(go,120);
+})();
 setInterval(tick,1000);
 })();
 </script>
